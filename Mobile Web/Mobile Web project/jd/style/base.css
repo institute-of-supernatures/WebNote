@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* 控制元素盒模型, 让元素宽高固定 */
+    box-sizing: border-box;
+    /* 移动端点击高亮的背景色, 去掉设置为透明 */
+    -webkit-tap-highlight-color: transparent;
+    /* 设置字体超过最小限制 */
+    -webkit-text-size-adjust: none;
+    /* 防止字体锯齿样式 */
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    border: 0;
+    outline: none;
+}
+
+img {
+    /* 解决图片底部间隙 */
+    vertical-align: middle;
+}
+
+i {
+    font-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+body {
+    background: #fff;
+    font: 14px/150% '微软雅黑','sans-serif';
+}
+
+/* body {
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+} */

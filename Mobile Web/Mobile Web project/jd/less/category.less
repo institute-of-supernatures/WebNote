@@ -1,0 +1,113 @@
+@import './base.less';
+/* header */
+
+#header {
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    .left {
+        width: .4rem;
+        height: .4rem;
+        .icon-back {
+            background-image: url('../images/sprites.png');
+            background-size: 2rem 2rem;
+            background-position: -.2rem 0;
+            width: .2rem;
+            height: .2rem;
+        }
+    }
+    .right {
+        width: .4rem;
+        height: .4rem;
+        .icon-menu {
+            background-image: url('../images/sprites.png');
+            background-size: 2rem 2rem;
+            background-position: -.6rem 0;
+            width: .2rem;
+            height: .2rem;
+            margin: .1rem auto;
+        }
+    }
+}
+
+/* main */
+
+#main {
+    display: flex; // margin-top: .4rem;
+    padding-top: .4rem;
+    padding-bottom: .5rem;
+    height: 100vh;
+    overflow: hidden;
+    .left {
+        width: .85rem;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            .swiper-slide {
+                height: auto;
+            }
+        }
+        ul {
+            li {
+                height: .45rem;
+                a {
+                    display: block;
+                    height: .45rem;
+                    text-align: center;
+                    line-height: .45rem;
+                    background-color: #f1eeee;
+                }
+            }
+            li.active {
+                a {
+                    background-color: #fff;
+                    color: @main-color;
+                }
+            }
+        }
+    }
+    .right {
+        flex: 1;
+        padding: .07rem;
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            .swiper-slide {
+                height: auto;
+            }
+            /* 右侧滚动条 */
+            .swiper-scrollbar {
+                right: 0px;
+                width: .03rem;
+                background: rgba(255, 0, 0, .1);
+                .swiper-scrollbar-drag {
+                    background: rgba(0, 255, 0, .5);
+                }
+            }
+        }
+        .banner {
+            img {
+                width: 100%;
+            }
+        }
+        .jd-brand {
+            margin: .1rem;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 33.33%;
+                a {
+                    display: block;
+                    text-align: center;
+                    img {
+                        width: .7rem;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

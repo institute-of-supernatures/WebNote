@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* 控制元素盒模型, 让元素宽高固定 */
+  box-sizing: border-box;
+  /* 移动端点击高亮的背景色, 去掉设置为透明 */
+  -webkit-tap-highlight-color: transparent;
+  /* 设置字体超过最小限制 */
+  -webkit-text-size-adjust: none;
+  /* 防止字体锯齿样式 */
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  /* 解决图片底部间隙 */
+  vertical-align: middle;
+}
+i {
+  font-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+html {
+  font-size: 26.6667vw;
+}
+body {
+  background: #fff;
+  font: 0.14rem/150% '微软雅黑', 'sans-serif';
+}
+/* body {
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+} */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+/* header */
+#header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 50;
+}
+#header .left {
+  width: 0.8rem;
+  height: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left a {
+  display: block;
+  width: 0.58rem;
+  height: 0.21rem;
+  background: url('../images/sprites.png') no-repeat 0 -1.1rem;
+  /* 设置背景图大小 缩小2倍 */
+  background-size: 2rem 2rem;
+  text-indent: -99.99rem;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#header .center form {
+  width: 100%;
+  position: relative;
+}
+#header .center form i {
+  width: 0.21rem;
+  height: 0.21rem;
+  background: url('../images/sprites.png') no-repeat -0.58rem -1.1rem;
+  background-size: 2rem 2rem;
+  position: absolute;
+  left: 0.05rem;
+  top: 0.06rem;
+}
+#header .center form input {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  padding-left: 0.3rem;
+}
+#header .right {
+  width: 0.5rem;
+  height: 0.4rem;
+}
+#header .right a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 0.4rem;
+}
+/* footer */
+#footer {
+  position: fixed;
+  width: 100%;
+  height: 0.5rem;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  width: 25%;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: .65rem;
+  height: .5rem;
+}

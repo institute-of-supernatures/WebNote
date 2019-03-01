@@ -1,0 +1,164 @@
+@import './base.less';
+
+
+/* slide */
+
+#slide {
+    position: relative;
+    width: 100%;
+    .swiper-pagination-bullet-active {
+        background: #fff;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+/* nav */
+
+#nav {
+    ul {
+        display: flex;
+        /* 换行 */
+        flex-wrap: wrap;
+        li {
+            width: 25%;
+            a {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0.1rem 0;
+                img {
+                    width: 0.4rem;
+                }
+                p {
+                    margin-top: 0.06rem;
+                }
+            }
+        }
+    }
+}
+
+/* main */
+
+#main {
+    background: #ccc;
+    padding: 0 0.05rem;
+    padding-bottom: 0.6rem;
+    /* 解决margin塌陷问题 */
+    border: 0.01rem solid transparent;
+    .seckill {
+        margin-top: 0.1rem;
+        background: #fff;
+        .title {
+            margin: 0.1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left {
+                display: flex;
+                align-items: center;
+                .seckill-icon {
+                    width: 0.2rem;
+                    height: 0.25rem;
+                    margin-left: 0.05rem;
+                }
+                .seckill-title {
+                    margin-left: 0.05rem;
+                    font-size: 0.16rem;
+                    color: @main-color;
+                }
+                .seckill-downtime {
+                    margin-left: 0.05rem;
+                    span:not(:nth-child(3n)) {
+                        display: inline-block;
+                        width: 0.15rem;
+                        height: 0.15rem;
+                        background: #000;
+                        color: #fff;
+                        text-align: center;
+                        line-height: 0.15rem;
+                    }
+                }
+            }
+            .right {
+                .seckill-more {
+                    margin-right: 0.05rem;
+                }
+            }
+        }
+        .content {
+            ul {
+                display: flex;
+                li {
+                    flex: 1;
+                    a {
+                        display: block;
+                        text-align: center;
+                        img {
+                            width: 1.1rem; // width: 100%;
+                            height: 1.1rem;
+                        }
+                        p {
+                            text-align: center;
+                            color: @main-color; // font-size: 0.12rem;
+                            del {
+                                color: #ccc;
+                            }
+                        }
+                    }
+                } // li:nth-child(n+2) {
+                //     border: 0.01rem solid #ccc;
+                // }
+                /* 相邻后面的li标签兄弟 */
+                li~li {
+                    border-left: 0.01rem solid #ccc;
+                }
+            }
+        }
+    }
+    .market {
+        background: #fff;
+        margin-top: 0.1rem;
+        .title {
+            border-bottom: 0.01rem solid #ccc;
+            >h4 {
+                line-height: 0.3rem;
+                padding-left: 0.3rem;
+                position: relative;
+            }
+            h4::before {
+                content: "";
+                width: 0.04rem;
+                height: 0.14rem;
+                position: absolute;
+                background: @main-color;
+                left: 0.2rem;
+                top: 0.07rem;
+            }
+        }
+        .content {
+            display: flex;
+            .left {
+                width: 50%;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .right {
+                width: 50%;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+

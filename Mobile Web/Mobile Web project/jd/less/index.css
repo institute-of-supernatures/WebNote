@@ -1,0 +1,295 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* 控制元素盒模型, 让元素宽高固定 */
+  box-sizing: border-box;
+  /* 移动端点击高亮的背景色, 去掉设置为透明 */
+  -webkit-tap-highlight-color: transparent;
+  /* 设置字体超过最小限制 */
+  -webkit-text-size-adjust: none;
+  /* 防止字体锯齿样式 */
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+  outline: none;
+}
+img {
+  /* 解决图片底部间隙 */
+  vertical-align: middle;
+}
+i {
+  font-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+html {
+  font-size: 26.6667vw;
+}
+body {
+  background: #fff;
+  font: 0.14rem/150% '微软雅黑', 'sans-serif';
+}
+/* body {
+    background: #fff;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+} */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+/* header */
+#header {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 50;
+}
+#header .left {
+  width: 0.8rem;
+  height: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left a {
+  display: block;
+  width: 0.58rem;
+  height: 0.21rem;
+  background: url('../images/sprites.png') no-repeat 0 -1.1rem;
+  /* 设置背景图大小 缩小2倍 */
+  background-size: 2rem 2rem;
+  text-indent: -99.99rem;
+}
+#header .center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+#header .center form {
+  width: 100%;
+  position: relative;
+}
+#header .center form i {
+  width: 0.21rem;
+  height: 0.21rem;
+  background: url('../images/sprites.png') no-repeat -0.58rem -1.1rem;
+  background-size: 2rem 2rem;
+  position: absolute;
+  left: 0.05rem;
+  top: 0.06rem;
+}
+#header .center form input {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  padding-left: 0.3rem;
+}
+#header .right {
+  width: 0.5rem;
+  height: 0.4rem;
+}
+#header .right a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 0.4rem;
+}
+/* footer */
+#footer {
+  position: fixed;
+  width: 100%;
+  height: 0.5rem;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+#footer ul {
+  display: flex;
+}
+#footer ul li {
+  width: 25%;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: .65rem;
+  height: .5rem;
+}
+/* slide */
+#slide {
+  position: relative;
+  width: 100%;
+}
+#slide .swiper-pagination-bullet-active {
+  background: #fff;
+}
+#slide img {
+  width: 100%;
+}
+/* nav */
+#nav ul {
+  display: flex;
+  /* 换行 */
+  flex-wrap: wrap;
+}
+#nav ul li {
+  width: 25%;
+}
+#nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem 0;
+}
+#nav ul li a img {
+  width: 0.4rem;
+}
+#nav ul li a p {
+  margin-top: 0.06rem;
+}
+/* main */
+#main {
+  background: #ccc;
+  padding: 0 0.05rem;
+  padding-bottom: 0.6rem;
+  /* 解决margin塌陷问题 */
+  border: 0.01rem solid transparent;
+}
+#main .seckill {
+  margin-top: 0.1rem;
+  background: #fff;
+}
+#main .seckill .title {
+  margin: 0.1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main .seckill .title .left {
+  display: flex;
+  align-items: center;
+}
+#main .seckill .title .left .seckill-icon {
+  width: 0.2rem;
+  height: 0.25rem;
+  margin-left: 0.05rem;
+}
+#main .seckill .title .left .seckill-title {
+  margin-left: 0.05rem;
+  font-size: 0.16rem;
+  color: #e93b3d;
+}
+#main .seckill .title .left .seckill-downtime {
+  margin-left: 0.05rem;
+}
+#main .seckill .title .left .seckill-downtime span:not(:nth-child(3n)) {
+  display: inline-block;
+  width: 0.15rem;
+  height: 0.15rem;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 0.15rem;
+}
+#main .seckill .title .right .seckill-more {
+  margin-right: 0.05rem;
+}
+#main .seckill .content ul {
+  display: flex;
+  /* 相邻后面的li标签兄弟 */
+}
+#main .seckill .content ul li {
+  flex: 1;
+}
+#main .seckill .content ul li a {
+  display: block;
+  text-align: center;
+}
+#main .seckill .content ul li a img {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+#main .seckill .content ul li a p {
+  text-align: center;
+  color: #e93b3d;
+}
+#main .seckill .content ul li a p del {
+  color: #ccc;
+}
+#main .seckill .content ul li ~ li {
+  border-left: 0.01rem solid #ccc;
+}
+#main .market {
+  background: #fff;
+  margin-top: 0.1rem;
+}
+#main .market .title {
+  border-bottom: 0.01rem solid #ccc;
+}
+#main .market .title > h4 {
+  line-height: 0.3rem;
+  padding-left: 0.3rem;
+  position: relative;
+}
+#main .market .title h4::before {
+  content: "";
+  width: 0.04rem;
+  height: 0.14rem;
+  position: absolute;
+  background: #e93b3d;
+  left: 0.2rem;
+  top: 0.07rem;
+}
+#main .market .content {
+  display: flex;
+}
+#main .market .content .left {
+  width: 50%;
+}
+#main .market .content .left a {
+  display: block;
+}
+#main .market .content .left a img {
+  width: 100%;
+}
+#main .market .content .right {
+  width: 50%;
+}
+#main .market .content .right a {
+  display: block;
+}
+#main .market .content .right a img {
+  width: 100%;
+}

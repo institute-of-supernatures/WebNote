@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 视口 -->
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 初始化css -->
+    <!-- <link rel="stylesheet" href="./style/base.css"> -->
+    <!-- 页面样式css -->
+    <!-- <link rel="stylesheet" href="./style/index.css"> -->
+    <!-- 轮播插件 -->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css">
+    <!-- 使用了less 不需要引入两个css文件 -->
+    <link rel="stylesheet" href="./less/index.css">
+    <title>京东</title>
+</head>
+
+<body>
+    <!-- 头部区域 推荐外面大容器使用id选择器
+            <可以提高选择器的优先级,覆盖样式> 
+            <id唯一 方便JS获取元素>
+    -->
+    <header id="header">
+        <!-- logo -->
+        <div class="left">
+            <a href="javascript:void(0);">logo</a>
+        </div>
+        <!-- 搜索框 -->
+        <div class="center">
+            <form action="#">
+                <i class="icon-search"></i>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
+        </div>
+        <!-- login -->
+        <div class="right">
+            <a href="javascript:void(0);">登录</a>
+        </div>
+    </header>
+    <!-- 轮播图区域 -->
+    <section id="slide">
+        <!-- Swiper轮播图结构 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <!-- 自定义内容 -->
+                    <a href="javascript:void(0);">
+                        <img src="./images/l1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l6.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l7.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0);">
+                        <img src="./images/l8.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- 导航条区域 -->
+    <nav id="nav">
+        <ul>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav0.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav1.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav2.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav3.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav4.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav5.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav6.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+            <li>
+                <a href="" src="javascript:void(0);">
+                    <img src="./images/nav7.png" alt="">
+                    <p>京东导航</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 京东秒杀区域 -->
+        <div class="seckill">
+            <!-- 标题 -->
+            <div class="title">
+                <div class="left">
+                    <img class="seckill-icon" src="./images/seckill-icon.png" alt="秒杀logo">
+                    <span class="seckill-title">掌上秒杀</span>
+                    <div class="seckill-downtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <a class="seckill-more" href="javascript:void(0);">更多 ></a>
+                </div>
+            </div>
+            <!-- 内容 -->
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./images/seckill-img.jpg" alt="">
+                            <p><span>￥6998</span> </p>
+                            <p><del>￥7998</del></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./images/seckill-img.jpg" alt="">
+                            <p><span>￥6998</span></p>
+                            <p><del>￥7998</del></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="./images/seckill-img.jpg" alt="">
+                            <p><span>￥6998</span></p>
+                            <p><del>￥7998</del></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 京东超市 -->
+        <div class="market">
+            <div class="title">
+                <h4>京东超市</h4>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <a href="javascript:void(0);" class="br">
+                        <img src="./images/cp1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="javascript:void(0);" class="bb">
+                        <img src="./images/cp2.jpg" alt="">
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="./images/cp3.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="market">
+            <div class="title">
+                <h4>京东超市</h4>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <a href="javascript:void(0);">
+                        <img src="./images/cp4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="right">
+                    <a href="javascript:void(0);">
+                        <img src="./images/cp5.jpg" alt="">
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="./images/cp6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="market">
+            <div class="title">
+                <h4>京东超市</h4>
+            </div>
+            <div class="content">
+                <div class="left">
+                    <a href="javascript:void(0);" class="bb">
+                        <img src="./images/cp2.jpg" alt="">
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="./images/cp3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="right">
+
+                    <a href="javascript:void(0);" class="bl">
+                        <img src="./images/cp1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <ul>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="https://m.360buyimg.com/mobilecms/jfs/t15145/137/2502885754/3106/de5e0b14/5aa10cd2N46f18ce6.png"
+                        alt="">
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <img src="https://m.360buyimg.com/mobilecms/jfs/t19183/49/696491919/3763/dec8cceb/5aa10cdbNa9cd0320.png"
+                        alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="https://m.360buyimg.com/mobilecms/jfs/t18583/69/717127328/4407/5e47882b/5aa10ceaN649eec12.png"
+                        alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img src="https://m.360buyimg.com/mobilecms/jfs/t17782/11/2358895717/4684/ad19de7f/5af43af1N04ef5a16.png"
+                        alt="">
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- 轮播插件 -->
+    <script src="./lib/swiper/js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
