@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .map {
+            width: 800px;
+            height: 608px;
+            margin: 10px auto;
+            background-color: #ccc;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        #start {
+            width: 80px;
+            height: 40px;
+            border: none;
+            outline-style: none;
+            background-color: skyblue;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-align: center;
+            line-height: 40px;
+        }
+        #start:hover {
+            background-color: #3178be;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始</button>
+    <div id="map" class="map"></div>
+</body>
+</html>
+<script src=" ./../common.js "></script>
+<script src=" ./index.js "></script>
+<script>
+
+    // -----------------------
+    // 获取地图和食物对象
+    var map = id('map');
+
+    // 创建游戏控制器对象
+    var game = new Game(map);
+    game.start();
+    // 调用控制对象开始游戏
+
+    // // var f1 = new window.Food(); window可以省略
+    // var f1 = new Food();
+    // f1.render(map);
+    //
+    // // 获取蛇对象
+    // var s1 = new Snake();
+    // s1.render(map);
+</script>

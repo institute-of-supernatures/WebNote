@@ -1,0 +1,2320 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>案例：广告移动效果 | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../day04/09-bom对象与dom对象介绍.html" />
+    
+    
+    <link rel="prev" href="../day04/07-案例：机械表.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.8"
+        data-chapter-title="案例：广告移动效果"
+        data-filepath="day04/08-案例：广告移动效果.md"
+        data-basepath=".."
+        data-revision="Mon Sep 03 2018 02:00:19 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="day01/index.html">
+            
+                
+                    <a href="../day01/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="day01/01-课程介绍.html">
+            
+                
+                    <a href="../day01/01-课程介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        课程介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="day01/02-根据id获取元素.html">
+            
+                
+                    <a href="../day01/02-根据id获取元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        根据id获取元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="day01/03-获取元素的属性.html">
+            
+                
+                    <a href="../day01/03-获取元素的属性.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        获取元素的属性
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="day01/04-根据标签名获取元素.html">
+            
+                
+                    <a href="../day01/04-根据标签名获取元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        根据标签名获取元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="day01/05-根据类名获取元素.html">
+            
+                
+                    <a href="../day01/05-根据类名获取元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        根据类名获取元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="day01/06-根据name获取元素.html">
+            
+                
+                    <a href="../day01/06-根据name获取元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        根据name获取元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="day01/07-根据选择器获取元素.html">
+            
+                
+                    <a href="../day01/07-根据选择器获取元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        根据选择器获取元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="day01/08-事件介绍及注册事件.html">
+            
+                
+                    <a href="../day01/08-事件介绍及注册事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        事件介绍及注册事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="day01/09-案例：隔行变色.html">
+            
+                
+                    <a href="../day01/09-案例：隔行变色.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        案例：隔行变色
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="day01/10-案例：按钮禁用表单事件.html">
+            
+                
+                    <a href="../day01/10-案例：按钮禁用表单事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        案例：按钮禁用表单事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="day01/11-案例：开关灯.html">
+            
+                
+                    <a href="../day01/11-案例：开关灯.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.11.</b>
+                        
+                        案例：开关灯
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="day01/12-案例：判断用户名和密码.html">
+            
+                
+                    <a href="../day01/12-案例：判断用户名和密码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.12.</b>
+                        
+                        案例：判断用户名和密码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="day01/13-案例：模拟京东搜索框.html">
+            
+                
+                    <a href="../day01/13-案例：模拟京东搜索框.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.13.</b>
+                        
+                        案例：模拟京东搜索框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="day01/14-案例：二维码的显示和隐藏.html">
+            
+                
+                    <a href="../day01/14-案例：二维码的显示和隐藏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.14.</b>
+                        
+                        案例：二维码的显示和隐藏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="day01/15-案例：哼哼哈哈.html">
+            
+                
+                    <a href="../day01/15-案例：哼哼哈哈.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.15.</b>
+                        
+                        案例：哼哼哈哈
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="day01/16-第一天学习总结.html">
+            
+                
+                    <a href="../day01/16-第一天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.16.</b>
+                        
+                        第一天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="day02/index.html">
+            
+                
+                    <a href="../day02/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="day02/00-工具类封装.html">
+            
+                
+                    <a href="../day02/00-工具类封装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        工具类封装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="day02/01-案例：隔行变色高级版.html">
+            
+                
+                    <a href="../day02/01-案例：隔行变色高级版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        案例：隔行变色高级版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="day02/02-案例：全选与全不选及反选.html">
+            
+                
+                    <a href="../day02/02-案例：全选与全不选及反选.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        案例：全选与全不选及反选
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="day02/03-案例：点餐选择框.html">
+            
+                
+                    <a href="../day02/03-案例：点餐选择框.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        案例：点餐选择框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="day02/04-innerText与textContent.html">
+            
+                
+                    <a href="../day02/04-innerText与textContent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        innerText与textContent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="day02/05-innerHTML.html">
+            
+                
+                    <a href="../day02/05-innerHTML.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        innerHTML
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="day02/06-案例：关闭京东广告栏.html">
+            
+                
+                    <a href="../day02/06-案例：关闭京东广告栏.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        案例：关闭京东广告栏
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="day02/07-dom中元素与节点介绍.html">
+            
+                
+                    <a href="../day02/07-dom中元素与节点介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        dom中元素与节点介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="day02/08-元素节点与属性节点.html">
+            
+                
+                    <a href="../day02/08-元素节点与属性节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        元素节点与属性节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="day02/09-文本节点与注释节点.html">
+            
+                
+                    <a href="../day02/09-文本节点与注释节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        文本节点与注释节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="day02/10-获取子节点和获取子元素.html">
+            
+                
+                    <a href="../day02/10-获取子节点和获取子元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        获取子节点和获取子元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="day02/11-获取兄弟节点与兄弟元素.html">
+            
+                
+                    <a href="../day02/11-获取兄弟节点与兄弟元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        获取兄弟节点与兄弟元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="day02/12-获取第一个子节点与第一个子元素.html">
+            
+                
+                    <a href="../day02/12-获取第一个子节点与第一个子元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        获取第一个子节点与第一个子元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="day02/13-获取最后一个节点与最后一个元素.html">
+            
+                
+                    <a href="../day02/13-获取最后一个节点与最后一个元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.14.</b>
+                        
+                        获取最后一个节点与最后一个元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="day02/14-获取父节点.html">
+            
+                
+                    <a href="../day02/14-获取父节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.15.</b>
+                        
+                        获取父节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="day02/15-案例：点击按钮关闭二维码.html">
+            
+                
+                    <a href="../day02/15-案例：点击按钮关闭二维码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.16.</b>
+                        
+                        案例：点击按钮关闭二维码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="day02/16-克隆节点和增加节点.html">
+            
+                
+                    <a href="../day02/16-克隆节点和增加节点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.17.</b>
+                        
+                        克隆节点和增加节点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="day02/17-第二天学习总结.html">
+            
+                
+                    <a href="../day02/17-第二天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.18.</b>
+                        
+                        第二天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="day03/index.html">
+            
+                
+                    <a href="../day03/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第三天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="day03/01-获取属性的另一种方式.html">
+            
+                
+                    <a href="../day03/01-获取属性的另一种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        获取属性的另一种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="day03/02-练习：给按钮添加索引并显示.html">
+            
+                
+                    <a href="../day03/02-练习：给按钮添加索引并显示.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        练习：给按钮添加索引并显示
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="day03/03-案例：tab栏切换效果实现.html">
+            
+                
+                    <a href="../day03/03-案例：tab栏切换效果实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        案例：tab栏切换效果实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="day03/04-阻止a标签跳转的几种方式.html">
+            
+                
+                    <a href="../day03/04-阻止a标签跳转的几种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        阻止a标签跳转的几种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="day03/05-案例：界面换肤.html">
+            
+                
+                    <a href="../day03/05-案例：界面换肤.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        案例：界面换肤
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="day03/06-创建元素三种方式.html">
+            
+                
+                    <a href="../day03/06-创建元素三种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        创建元素三种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="day03/07-点击按钮创建多个标签.html">
+            
+                
+                    <a href="../day03/07-点击按钮创建多个标签.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        点击按钮创建多个标签
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="day03/08-创建input标签需要注意的问题.html">
+            
+                
+                    <a href="../day03/08-创建input标签需要注意的问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        创建input标签需要注意的问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="day03/09-appendChild添加元素细节问题.html">
+            
+                
+                    <a href="../day03/09-appendChild添加元素细节问题.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.9.</b>
+                        
+                        appendChild添加元素细节问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="day03/10-案例：选择职业技能.html">
+            
+                
+                    <a href="../day03/10-案例：选择职业技能.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.10.</b>
+                        
+                        案例：选择职业技能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="day03/11-选择职业技能案例封装.html">
+            
+                
+                    <a href="../day03/11-选择职业技能案例封装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.11.</b>
+                        
+                        选择职业技能案例封装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="day03/12-插入子元素.html">
+            
+                
+                    <a href="../day03/12-插入子元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.12.</b>
+                        
+                        插入子元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="day03/13-替换子元素.html">
+            
+                
+                    <a href="../day03/13-替换子元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.13.</b>
+                        
+                        替换子元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.14" data-path="day03/14-移除子元素.html">
+            
+                
+                    <a href="../day03/14-移除子元素.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.14.</b>
+                        
+                        移除子元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.15" data-path="day03/15-案例：模拟百度搜索框.html">
+            
+                
+                    <a href="../day03/15-案例：模拟百度搜索框.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.15.</b>
+                        
+                        案例：模拟百度搜索框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.16" data-path="day03/16-案例：祝福墙高级版.html">
+            
+                
+                    <a href="../day03/16-案例：祝福墙高级版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.16.</b>
+                        
+                        案例：祝福墙高级版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.17" data-path="day03/17-第三天学习总结.html">
+            
+                
+                    <a href="../day03/17-第三天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.17.</b>
+                        
+                        第三天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="day04/index.html">
+            
+                
+                    <a href="../day04/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第四天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="day04/01-定时器setInterval.html">
+            
+                
+                    <a href="../day04/01-定时器setInterval.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        定时器setInterval
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="day04/02-定时器setTimeout.html">
+            
+                
+                    <a href="../day04/02-定时器setTimeout.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        定时器setTimeout
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="day04/03-定时器案例：京东倒计时.html">
+            
+                
+                    <a href="../day04/03-定时器案例：京东倒计时.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        定时器案例：京东倒计时
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="day04/04-动画案例：平移动画.html">
+            
+                
+                    <a href="../day04/04-动画案例：平移动画.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        动画案例：平移动画
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="day04/05-transform复习.html">
+            
+                
+                    <a href="../day04/05-transform复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        transform复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="day04/06-案例：电子表.html">
+            
+                
+                    <a href="../day04/06-案例：电子表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        案例：电子表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="day04/07-案例：机械表.html">
+            
+                
+                    <a href="../day04/07-案例：机械表.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        案例：机械表
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.8" data-path="day04/08-案例：广告移动效果.html">
+            
+                
+                    <a href="../day04/08-案例：广告移动效果.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        案例：广告移动效果
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="day04/09-bom对象与dom对象介绍.html">
+            
+                
+                    <a href="../day04/09-bom对象与dom对象介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        bom对象与dom对象介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="day04/10-window对象.html">
+            
+                
+                    <a href="../day04/10-window对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.10.</b>
+                        
+                        window对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="day04/11-window的事件.html">
+            
+                
+                    <a href="../day04/11-window的事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.11.</b>
+                        
+                        window的事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="day04/12-location对象.html">
+            
+                
+                    <a href="../day04/12-location对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.12.</b>
+                        
+                        location对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="day04/13-history对象.html">
+            
+                
+                    <a href="../day04/13-history对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.13.</b>
+                        
+                        history对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="day04/14-navigator对象.html">
+            
+                
+                    <a href="../day04/14-navigator对象.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.14.</b>
+                        
+                        navigator对象
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="day04/15-第四天学习总结.html">
+            
+                
+                    <a href="../day04/15-第四天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.15.</b>
+                        
+                        第四天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="day05/index.html">
+            
+                
+                    <a href="../day05/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        第五天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="day05/01-offsetWidth与offsetHeight.html">
+            
+                
+                    <a href="../day05/01-offsetWidth与offsetHeight.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        offsetWidth与offsetHeight
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="day05/02-offsetParent.html">
+            
+                
+                    <a href="../day05/02-offsetParent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        offsetParent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="day05/03-offsetLeft和offsetTop.html">
+            
+                
+                    <a href="../day05/03-offsetLeft和offsetTop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        offsetLeft和offsetTop
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="day05/04-animation函数封装1.html">
+            
+                
+                    <a href="../day05/04-animation函数封装1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        animation函数封装1
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="day05/05-animation函数封装2.html">
+            
+                
+                    <a href="../day05/05-animation函数封装2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        animation函数封装2
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="day05/06-animation函数封装3.html">
+            
+                
+                    <a href="../day05/06-animation函数封装3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        animation函数封装3
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="day05/07-animation函数封装4.html">
+            
+                
+                    <a href="../day05/07-animation函数封装4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        animation函数封装4
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="day05/08-轮播图静态版.html">
+            
+                
+                    <a href="../day05/08-轮播图静态版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        轮播图静态版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="day05/09-轮播图完成上一页和下一页.html">
+            
+                
+                    <a href="../day05/09-轮播图完成上一页和下一页.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        轮播图完成上一页和下一页
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="day05/10-轮播图完成无限轮播.html">
+            
+                
+                    <a href="../day05/10-轮播图完成无限轮播.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        轮播图完成无限轮播
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="day05/11-轮播图完成点击页码跳转.html">
+            
+                
+                    <a href="../day05/11-轮播图完成点击页码跳转.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.11.</b>
+                        
+                        轮播图完成点击页码跳转
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="day05/12-轮播图完成自动轮播.html">
+            
+                
+                    <a href="../day05/12-轮播图完成自动轮播.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.12.</b>
+                        
+                        轮播图完成自动轮播
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="day05/13-轮播图完整思路总结.html">
+            
+                
+                    <a href="../day05/13-轮播图完整思路总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.13.</b>
+                        
+                        轮播图完整思路总结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="day05/14-第五天学习总结.html">
+            
+                
+                    <a href="../day05/14-第五天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.14.</b>
+                        
+                        第五天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="day06/index.html">
+            
+                
+                    <a href="../day06/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        第六天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="day06/01-缓动动画介绍.html">
+            
+                
+                    <a href="../day06/01-缓动动画介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        缓动动画介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="day06/02-缓动动画封装01.html">
+            
+                
+                    <a href="../day06/02-缓动动画封装01.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        缓动动画封装01
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="day06/03-缓动动画封装02.html">
+            
+                
+                    <a href="../day06/03-缓动动画封装02.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        缓动动画封装02
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="day06/04-案例：筋斗云.html">
+            
+                
+                    <a href="../day06/04-案例：筋斗云.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        案例：筋斗云
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="day06/05-获取元素样式属性的方法.html">
+            
+                
+                    <a href="../day06/05-获取元素样式属性的方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        获取元素样式属性的方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="day06/06-缓动动画封装03.html">
+            
+                
+                    <a href="../day06/06-缓动动画封装03.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        缓动动画封装03
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="day06/07-缓动动画封装04.html">
+            
+                
+                    <a href="../day06/07-缓动动画封装04.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        缓动动画封装04
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="day06/08-缓动动画封装05.html">
+            
+                
+                    <a href="../day06/08-缓动动画封装05.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        缓动动画封装05
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="day06/09-缓动动画封装06-终极版.html">
+            
+                
+                    <a href="../day06/09-缓动动画封装06-终极版.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        缓动动画封装06-终极版
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="day06/10-缓动动画封装-透明度和层级版本.html">
+            
+                
+                    <a href="../day06/10-缓动动画封装-透明度和层级版本.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        缓动动画封装-透明度和层级版本
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="day06/11-[课后总结]缓动动画封装思路总结.html">
+            
+                
+                    <a href="../day06/11-[课后总结]缓动动画封装思路总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        [课后总结]缓动动画封装思路总结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="day06/12-案例：360开机动画.html">
+            
+                
+                    <a href="../day06/12-案例：360开机动画.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        案例：360开机动画
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="day06/13-案例：旋转木马.html">
+            
+                
+                    <a href="../day06/13-案例：旋转木马.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        案例：旋转木马
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="day06/14-第六天学习总结.html">
+            
+                
+                    <a href="../day06/14-第六天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.</b>
+                        
+                        第六天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="day07/index.html">
+            
+                
+                    <a href="../day07/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第七天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="day07/01-scroll家族.html">
+            
+                
+                    <a href="../day07/01-scroll家族.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        scroll家族
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="day07/02-获取页面的scrollTop和scorllLeft.html">
+            
+                
+                    <a href="../day07/02-获取页面的scrollTop和scorllLeft.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        获取页面的scrollTop和scorllLeft
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="day07/03-案例：固定导航.html">
+            
+                
+                    <a href="../day07/03-案例：固定导航.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        案例：固定导航
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="day07/04-client家族.html">
+            
+                
+                    <a href="../day07/04-client家族.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        client家族
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="day07/05-获取页面的可视区域clientLeft和clientTop.html">
+            
+                
+                    <a href="../day07/05-获取页面的可视区域clientLeft和clientTop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        获取页面的可视区域clientLeft和clientTop
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="day07/06-响应式布局初体验.html">
+            
+                
+                    <a href="../day07/06-响应式布局初体验.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        响应式布局初体验
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="day07/07-事件对象介绍.html">
+            
+                
+                    <a href="../day07/07-事件对象介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        事件对象介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="day07/08-事件对象三大坐标系.html">
+            
+                
+                    <a href="../day07/08-事件对象三大坐标系.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.8.</b>
+                        
+                        事件对象三大坐标系
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="day07/09-案例：天使跟你飞.html">
+            
+                
+                    <a href="../day07/09-案例：天使跟你飞.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.9.</b>
+                        
+                        案例：天使跟你飞
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="day07/10-练习：让div跟着鼠标移动.html">
+            
+                
+                    <a href="../day07/10-练习：让div跟着鼠标移动.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.10.</b>
+                        
+                        练习：让div跟着鼠标移动
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="day07/11-获取事件触发点相对于元素位置01.html">
+            
+                
+                    <a href="../day07/11-获取事件触发点相对于元素位置01.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.11.</b>
+                        
+                        获取事件触发点相对于元素位置01
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" data-path="day07/12-获取事件触发点相对于元素位置02.html">
+            
+                
+                    <a href="../day07/12-获取事件触发点相对于元素位置02.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.12.</b>
+                        
+                        获取事件触发点相对于元素位置02
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" data-path="day07/13-拖拽盒子01.html">
+            
+                
+                    <a href="../day07/13-拖拽盒子01.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.13.</b>
+                        
+                        拖拽盒子01
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.14" data-path="day07/14-拖拽盒子02.html">
+            
+                
+                    <a href="../day07/14-拖拽盒子02.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.14.</b>
+                        
+                        拖拽盒子02
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.15" data-path="day07/15-拖拽登录框.html">
+            
+                
+                    <a href="../day07/15-拖拽登录框.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.15.</b>
+                        
+                        拖拽登录框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.16" data-path="day07/16-第七天学习总结.html">
+            
+                
+                    <a href="../day07/16-第七天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.16.</b>
+                        
+                        第七天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="day08/index.html">
+            
+                
+                    <a href="../day08/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        第八天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="day08/01-案例：放大镜.html">
+            
+                
+                    <a href="../day08/01-案例：放大镜.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        案例：放大镜
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="day08/02-添加事件的另一种方式.html">
+            
+                
+                    <a href="../day08/02-添加事件的另一种方式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        添加事件的另一种方式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="day08/03-移除事件.html">
+            
+                
+                    <a href="../day08/03-移除事件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        移除事件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="day08/04-事件冒泡.html">
+            
+                
+                    <a href="../day08/04-事件冒泡.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        事件冒泡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="day08/05-事件冒泡的好处.html">
+            
+                
+                    <a href="../day08/05-事件冒泡的好处.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        事件冒泡的好处
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="day08/06-事件冒泡的影响.html">
+            
+                
+                    <a href="../day08/06-事件冒泡的影响.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        事件冒泡的影响
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="day08/07-阻止事件冒泡.html">
+            
+                
+                    <a href="../day08/07-阻止事件冒泡.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        阻止事件冒泡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="day08/08-事件捕获.html">
+            
+                
+                    <a href="../day08/08-事件捕获.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        事件捕获
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="day08/09-事件的三个阶段.html">
+            
+                
+                    <a href="../day08/09-事件的三个阶段.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        事件的三个阶段
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="day08/10-事件的类型type.html">
+            
+                
+                    <a href="../day08/10-事件的类型type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        事件的类型type
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" data-path="day08/11-键盘事件&amp;获取键盘的按键.html">
+            
+                
+                    <a href="../day08/11-键盘事件&amp;获取键盘的按键.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.11.</b>
+                        
+                        键盘事件&amp;获取键盘的按键
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.12" data-path="day08/12-事件的几个属性this，target，currentTarget.html">
+            
+                
+                    <a href="../day08/12-事件的几个属性this，target，currentTarget.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.12.</b>
+                        
+                        事件的几个属性this，target，currentTarget
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.13" data-path="day08/13-第八天学习总结.html">
+            
+                
+                    <a href="../day08/13-第八天学习总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.13.</b>
+                        
+                        第八天学习总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x6848;&#x4F8B;&#xFF1A;&#x5E7F;&#x544A;&#x79FB;&#x52A8;&#x6548;&#x679C;">&#x6848;&#x4F8B;&#xFF1A;&#x5E7F;&#x544A;&#x79FB;&#x52A8;&#x6548;&#x679C;</h1>
+<ul>
+<li><p><a href="http://localhost:63342/%E5%A4%87%E8%AF%BE%E4%BB%A3%E7%A0%81/day04/08-%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%B9%BF%E5%91%8A%E7%A7%BB%E5%8A%A8%E6%95%88%E6%9E%9C.html?_ijt=pbb81lpntk1vqv8kki6sd2leul" target="_blank">&#x6548;&#x679C;&#x9884;&#x89C8;</a></p>
+</li>
+<li><p>&#x9700;&#x6C42;&#xFF1A;</p>
+<ul>
+<li>1.&#x5F53;&#x628A;&#x9F20;&#x6807;&#x653E;&#x5728;&#x56FE;&#x7247;&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x65F6;&#xFF0C;&#x56FE;&#x7247;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#xFF08;&#x76F4;&#x5230;&#x6700;&#x5E95;&#x90E8;&#xFF09;&#xFF0C;&#x9F20;&#x6807;&#x79FB;&#x5F00;&#x65F6;&#x505C;&#x6B62;&#x6EDA;&#x52A8;</li>
+<li>2.&#x5F53;&#x628A;&#x9F20;&#x6807;&#x653E;&#x5728;&#x56FE;&#x7247;&#x7684;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x65F6;&#xFF0C;&#x56FE;&#x7247;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#xFF08;&#x76F4;&#x5230;&#x6700;&#x9876;&#x90E8;&#xFF09;&#xFF0C;&#x9F20;&#x6807;&#x79FB;&#x5F00;&#x65F6;&#x505C;&#x6B62;&#x6EDA;&#x52A8;</li>
+</ul>
+</li>
+<li><p>&#x601D;&#x8DEF;&#xFF1A;</p>
+<ul>
+<li>1.&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;div&#x4E2D;&#x653E;&#x4E00;&#x5F20;&#x5927;&#x56FE;&#x7247;&#xFF0C;&#x8BBE;&#x7F6E;overflow&#x5C5E;&#x6027;&#x4E3A;hidden&#xFF08;&#x8D85;&#x51FA;div&#x5927;&#x5C0F;&#x90E8;&#x5206;&#x4E0D;&#x53EF;&#x89C1;&#xFF09;</li>
+<li>2.&#x5206;&#x522B;&#x7ED9;div&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x548C;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;span&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;span&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x9F20;&#x6807;&#x79FB;&#x5165;&#x4E8B;&#x4EF6;<ul>
+<li>&#x56FE;&#x7247;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#xFF1A;top&#x503C;&#x8D8A;&#x6765;&#x8D8A;&#x5C0F;&#xFF08;-100 &lt; -10&#xFF09;</li>
+<li>&#x56FE;&#x7247;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#xFF1A;top&#x503C;&#x8D8A;&#x6765;&#x8D8A;&#x5927;  &#xFF08;-0 &gt; -100&#xFF09;</li>
+</ul>
+</li>
+<li>3.&#x9F20;&#x6807;&#x79FB;&#x51FA;&#x65F6;&#x505C;&#x6B62;&#x5B9A;&#x65F6;&#x5668;</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/0401.gif" alt=""></p>
+<pre><code class="lang-html">
+
+<span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+        <span class="hljs-class">.xiaomi</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">512px</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">400px</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid <span class="hljs-hexcolor">#f00</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">100px</span> auto</span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+        }</span>
+
+        <span class="hljs-class">.xiaomi</span> <span class="hljs-tag">span</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">cursor</span>:<span class="hljs-value"> pointer</span></span>;
+        }</span>
+
+        <span class="hljs-class">.up</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+        }</span>
+
+        <span class="hljs-class">.down</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+        }</span>
+
+        <span class="hljs-class">.xiaomi</span> <span class="hljs-tag">img</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+            <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+        }</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;xiaomi&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;images/mi.png&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">&quot;&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;pic&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;up&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;goUp&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;down&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;goDown&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;common.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="actionscript">
+
+    <span class="hljs-comment">/*&#x9700;&#x6C42;&#xFF1A;1.&#x5F53;&#x628A;&#x9F20;&#x6807;&#x653E;&#x5728;&#x56FE;&#x7247;&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x65F6;&#xFF0C;&#x56FE;&#x7247;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#xFF08;&#x76F4;&#x5230;&#x6700;&#x5E95;&#x90E8;&#xFF09;&#xFF0C;&#x9F20;&#x6807;&#x79FB;&#x5F00;&#x65F6;&#x505C;&#x6B62;&#x6EDA;&#x52A8;
+    2.&#x5F53;&#x628A;&#x9F20;&#x6807;&#x653E;&#x5728;&#x56FE;&#x7247;&#x7684;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x65F6;&#xFF0C;&#x56FE;&#x7247;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#xFF08;&#x76F4;&#x5230;&#x6700;&#x9876;&#x90E8;&#xFF09;&#xFF0C;&#x9F20;&#x6807;&#x79FB;&#x5F00;&#x65F6;&#x505C;&#x6B62;&#x6EDA;&#x52A8;
+
+    &#x601D;&#x8DEF;&#xFF1A;1.&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;div&#x4E2D;&#x653E;&#x4E00;&#x5F20;&#x5927;&#x56FE;&#x7247;&#xFF0C;&#x8BBE;&#x7F6E;overflow&#x5C5E;&#x6027;&#x4E3A;hidden&#xFF08;&#x8D85;&#x51FA;div&#x5927;&#x5C0F;&#x90E8;&#x5206;&#x4E0D;&#x53EF;&#x89C1;&#xFF09;
+    2.&#x5206;&#x522B;&#x7ED9;div&#x7684;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x548C;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;span&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;span&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x9F20;&#x6807;&#x79FB;&#x5165;&#x4E8B;&#x4EF6;
+        *.&#x56FE;&#x7247;&#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#xFF1A;top&#x503C;&#x8D8A;&#x6765;&#x8D8A;&#x5C0F;&#xFF08;-100 &lt; -10&#xFF09;
+        *.&#x56FE;&#x7247;&#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#xFF1A;top&#x503C;&#x8D8A;&#x6765;&#x8D8A;&#x5927;  &#xFF08;-0 &gt; -100&#xFF09;
+    3.&#x9F20;&#x6807;&#x79FB;&#x51FA;&#x65F6;&#x505C;&#x6B62;&#x5B9A;&#x65F6;&#x5668;
+
+     */</span>
+
+    <span class="hljs-comment">//1.&#x83B7;&#x53D6;&#x754C;&#x9762;&#x5143;&#x7D20;</span>
+    <span class="hljs-keyword">var</span> pic = id(<span class="hljs-string">&apos;pic&apos;</span>);
+    <span class="hljs-keyword">var</span> up = id(<span class="hljs-string">&apos;goUp&apos;</span>);
+    <span class="hljs-keyword">var</span> down = id(<span class="hljs-string">&apos;goDown&apos;</span>);
+
+    <span class="hljs-comment">//2.&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x8BB0;&#x5F55;&#x56FE;&#x7247;&#x5F53;&#x524D;top&#x503C;</span>
+    <span class="hljs-keyword">var</span> currentTop = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">//3.&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5B9A;&#x65F6;&#x5668;&#x7684;timeID&#xFF08;&#x4E0A;&#x4E0B;&#x79FB;&#x52A8;&#x5206;&#x522B;&#x662F;&#x4E24;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;,&#x5207;&#x6362;&#x79FB;&#x52A8;&#x65F6;&#x9700;&#x8981;&#x505C;&#x6B62;&#x53E6;&#x4E00;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#xFF09;</span>
+    <span class="hljs-keyword">var</span> timeID;
+    <span class="hljs-comment">//4.&#x7ED9;&#x4E0A;&#x534A;&#x90E8;&#x5206;&#x6DFB;&#x52A0;&#x9F20;&#x6807;&#x79FB;&#x5165;&#x4E8B;&#x4EF6;&#x548C;&#x79FB;&#x51FA;&#x4E8B;&#x4EF6;</span>
+    up.onmouseover = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+
+        timeID = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+            currentTop -= <span class="hljs-number">10</span>;<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6BCF;&#x6B21;&#x79FB;&#x52A8;&#x7684;&#x8DDD;&#x79BB;</span>
+            <span class="hljs-comment">//&#x5411;&#x4E0B;&#x79FB;&#x52A8;&#x65F6;&#x8FB9;&#x754C;&#x68C0;&#x6D4B;&#xFF1A;&#x56FE;&#x7247;&#x6700;&#x5C0F;top&#x503C;&#xFF08;&#x6CE8;&#x610F;&#x8D1F;&#x6570;&#xFF09; = &#x56FE;&#x7247;&#x9AD8;&#x5EA6;&#xFF08;1470&#xFF09; - &#x76D2;&#x5B50;&#x9AD8;&#x5EA6;&#xFF08;400&#xFF09; = -1070</span>
+            <span class="hljs-keyword">if</span>(currentTop &gt;= -<span class="hljs-number">1070</span>){
+                pic.style.top = currentTop + <span class="hljs-string">&apos;px&apos;</span>;
+            }<span class="hljs-keyword">else</span>{
+                pic.style.top =  <span class="hljs-string">&apos;-1070px&apos;</span>;
+                <span class="hljs-comment">/*&#x52A8;&#x753B;&#x7EC6;&#x8282;&#x95EE;&#x9898;*/</span>
+                <span class="hljs-comment">//&#x4E00;&#x65E6;&#x8D85;&#x51FA;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#x5C31;&#x6CA1;&#x5FC5;&#x8981;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x63A5;&#x6E05;&#x9664;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x6027;&#x80FD;</span>
+                clearInterval(timeID);
+                <span class="hljs-comment">//&#x8BBE;&#x7F6E;currentTop&#x7684;&#x503C;&#x4E3A;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;currentTop&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4E00;&#x5B9A;&#x662F;-1070&#xFF0C;&#x4E0B;&#x4E00;&#x6B21;&#x79FB;&#x52A8;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x95EA;&#x73B0;&#x60C5;&#x51B5;</span>
+                currentTop = -<span class="hljs-number">1070</span>;
+            }
+        },<span class="hljs-number">50</span>)
+    }
+    <span class="hljs-comment">//&#x79FB;&#x51FA;&#x65F6;&#x6E05;&#x9664;&#x5B9A;&#x65F6;&#x5668;</span>
+    up.onmouseout = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+        clearInterval(timeID);
+    }
+
+    <span class="hljs-comment">//5.&#x7ED9;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x6DFB;&#x52A0;&#x9F20;&#x6807;&#x79FB;&#x5165;&#x548C;&#x79FB;&#x51FA;&#x4E8B;&#x4EF6;</span>
+    down.onmouseover = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+
+        timeID = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+            currentTop += <span class="hljs-number">10</span>;<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6BCF;&#x6B21;&#x79FB;&#x52A8;&#x7684;&#x8DDD;&#x79BB;</span>
+            <span class="hljs-comment">//&#x5411;&#x4E0A;&#x79FB;&#x52A8;&#x65F6;&#x8FB9;&#x754C;&#x68C0;&#x6D4B;&#xFF1A;&#x56FE;&#x7247;&#x6700;&#x5927;top&#x503C;0</span>
+            <span class="hljs-keyword">if</span>(currentTop &lt;= <span class="hljs-number">0</span>){
+                pic.style.top = currentTop + <span class="hljs-string">&apos;px&apos;</span>;
+            }<span class="hljs-keyword">else</span>{
+                pic.style.top =  <span class="hljs-string">&apos;0px&apos;</span>;
+                <span class="hljs-comment">/*&#x52A8;&#x753B;&#x7EC6;&#x8282;&#x95EE;&#x9898;*/</span>
+                <span class="hljs-comment">//&#x4E00;&#x65E6;&#x8D85;&#x51FA;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B9A;&#x65F6;&#x5668;&#x5C31;&#x6CA1;&#x5FC5;&#x8981;&#x6267;&#x884C;&#xFF0C;&#x76F4;&#x63A5;&#x6E05;&#x9664;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x6027;&#x80FD;</span>
+                clearInterval(timeID);
+                <span class="hljs-comment">//&#x8BBE;&#x7F6E;currentTop&#x7684;&#x503C;&#x4E3A;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;currentTop&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4E00;&#x5B9A;&#x662F;0&#xFF0C;&#x4E0B;&#x4E00;&#x6B21;&#x79FB;&#x52A8;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x95EA;&#x73B0;&#x60C5;&#x51B5;</span>
+                currentTop = <span class="hljs-number">0</span>;
+            }
+        },<span class="hljs-number">50</span>)
+    }
+    <span class="hljs-comment">//&#x79FB;&#x51FA;&#x65F6;&#x6E05;&#x9664;&#x5B9A;&#x65F6;&#x5668;</span>
+    down.onmouseout = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(  )</span> </span>{
+        clearInterval(timeID);
+    }
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../day04/07-案例：机械表.html" class="navigation navigation-prev " aria-label="Previous page: 案例：机械表"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../day04/09-bom对象与dom对象介绍.html" class="navigation navigation-next " aria-label="Next page: bom对象与dom对象介绍"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

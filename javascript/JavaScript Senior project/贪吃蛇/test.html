@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>见缝插针</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        body{
+            background:black;
+        }
+        ul{
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width:100%;
+            text-align: center;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            font-size: 30px;
+            color: white;
+        }
+        #myCanvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+        #cover{
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(50,50,50,0.8);
+            z-index: 1000;
+            display: none;
+        }
+        #cover li:nth-child(2) button{
+            border:1px white solid;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 25px;
+            background-color: none;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    //弹出框
+    <div id="cover">
+        <ul>
+            <li id="showResult">恭喜过关</li>
+            <li><button id="button">下一关</button></li>
+        </ul>
+    </div>
+    //画布
+    <canvas id="myCanvas" width="350" height="700" ></canvas>
+</div>
+<!--<script type="text/javascript" src="js/index.js"></script>-->
+</body>
+</html>
+<script>
+    // JavaScript
+    window.onload=function(){
+//canvas
+        var cans=document.getElementById("myCanvas");
+//弹出框
+        var cover=document.getElementById("cover");
+        var showResult=document.getElementById("showResult");
+        var button=document.getElementById("button");
+        var can=cans.getContext("2d");
+//获取当前是第几关,存到本地,,每关都刷新页面重新加载
+        var checkPoint=JSON.parse(localStorage.getItem("num"));
+        if(checkPoint){
+            checkPoint=checkPoint;
+        }else{
+            checkPoint=1;
+        }
+//总共几关的简单配置,默认转动小球数,等待点击的小球数,还有显示第几关
+        var pass=[
+            [3,5,1],
+            [3,7,2],
+            [4,7,3],
+            [4,9,4],
+            [5,9,5],
+            [5,11,6],
+            [6,11,7],
+            [6,12,8],
+        ]
+//大圆的中心点
+        var x=200;
+        var y=200;
+//每次转动的速度(角度)
+        var speed=1;
+//小球的半径
+        var smallPi=15;
+//调动小球转动
+        var run;
+//转动小球数组
+        var balls=[];
+//等待小球数组
+        var waits=[];
+//用来存放第几关
+        var showPass;
+        var mark=true;
+//根据当前第几关配置
+        if(checkPoint){
+//默认的显示转动小球的个数和角度
+            for(var i=0;i<pass[checkPoint-1][0];i++){
+                console.log(360/pass[checkPoint-1][0]*i);
+                balls.push({
+                    deg:360/pass[checkPoint-1][0]*i,   //平均分三份
+                    num:""
+                });
+            }
+//等待小球的数量和文本
+            for(var i=pass[checkPoint-1][1];i>0;i--){
+                waits.push(
+                    {
+                        deg:"",
+                        num:i
+                    }
+                );
+            }
+//大球第几关的显示文本
+            showPass=pass[checkPoint-1][2];
+        }
+//设置中心点
+        can.translate(x,y);
+//画大球
+        function bigRound(){
+            can.save();
+            can.beginPath();
+            can.fillStyle="white";
+            can.arc(0,0,25,0,2*Math.PI);
+            can.fill();
+            can.closePath();
+            can.stroke();
+            can.font="25px 微软雅黑";
+            can.fillStyle="black";
+            can.fillText(showPass,-6,10);
+            can.restore();
+        }
+//画转动小球
+        function createSmallRound(){
+            can.clearRect(-180,-150,cans.width,300);
+            bigRound();
+            can.save();
+            for(var i=0;i<balls.length;i++){
+                can.save();
+// console.log(balls[i]);
+                can.rotate(balls[i].deg*Math.PI/180);
+
+                balls[i].deg=balls[i].deg+1;
+                if(balls[i].deg>=360){
+                    balls[i].deg=0;
+                }
+
+//绘制转动杆子上
+                can.beginPath();
+                can.lineWidth=5;
+                can.strokeStyle="white";
+                can.fillStyle="white";
+                can.moveTo(25,0);
+                can.lineTo(125,0);
+                can.fill();
+                can.closePath();
+                can.stroke();
+//绘制转动杆子上的 ball
+                can.beginPath();
+                can.fillStyle="white";
+                can.arc(125,0,smallPi,0,2*Math.PI);
+                can.fill();
+                can.closePath();
+                can.stroke();
+//小球上的字
+                can.font="20px 微软雅黑";
+                can.fillStyle="black";
+                can.fillText(balls[i].num,115,8)
+                can.restore();
+            }
+            can.restore();
+//重复转动
+            run= window.requestAnimationFrame(createSmallRound);
+        }
+        createSmallRound();
+//等待小球
+        function waitRound(){
+            can.clearRect(-180,150,cans.width,350);
+            can.save();
+            for(var i=0;i<waits.length;i++){
+                can.beginPath();
+                can.fillStyle="white";
+                can.arc(0,150+(smallPi*2)*(waits[i].num+1),smallPi,0,2*Math.PI);
+                can.fill();
+                can.closePath();
+                can.stroke();
+
+                can.font="20px 微软雅黑";
+                can.fillStyle="black";
+                can.fillText(waits[waits.length-1-i].num,-9,157+(smallPi*2)*(waits[i].num+1));
+                can.restore();
+            }
+        }
+        waitRound();
+//点击事件
+        cans.onclick=function(){
+//判断剩余口红的数量
+            if(waits.length!= ""){
+//等待小球删除第一个小球记录,添加到转动小球数组
+                var ball=waits.shift();
+
+                ball.deg=90;
+                console.log(balls);
+//添加的小球从90度添加,判断是否与转动的小球角度有重合
+                for(var i=0;i<balls.length;i++){
+//如果角度重合则游戏失败
+                    if(balls[i].deg>74 && balls[i].deg<106){
+                        cans.onclick=null;
+                        mark=false;
+                        setTimeout(function(){
+                            cover.style.display="block";
+                            showResult.innerText="闯关失败";
+                            button.innerText="重新来";
+                            cancelAnimationFrame(run);
+                            button.onclick=function(){
+                                clicks(0);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                            return;
+                        },100)
+                    }
+                }
+//角度没有重合的,正常添加到转到小球
+                balls.push(ball);
+                waitRound();
+//等待为0时,游戏成功进去入下一关
+                if(waits.length==0 && mark==true){
+                    setTimeout(function(){
+                        cover.style.display="block";
+                        if(checkPoint==pass.length){
+                            showResult.innerText="恭喜通过全关";
+                            button.innerText="第一关";
+                            button.onclick=function(){
+                                var lengths=pass.length-1;
+                                clicks(-7);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                        }else{
+                            showResult.innerText="闯关成功";
+                            button.innerText="下一关";
+                            button.onclick=function(){
+                                clicks(1);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                        }
+                        cancelAnimationFrame(run);
+                    },500)
+                }
+            }
+        }
+//弹出框的点击按钮会对游戏成功或失败判断存储对应的游戏关数到本地,页面刷新时会获取使用
+        function clicks(num){
+            checkPoint+=num;
+            localStorage.setItem("num",JSON.stringify(checkPoint));
+        }
+    }
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41
+    42
+    43
+    44
+    45
+    46
+    47
+    48
+    49
+    50
+    51
+    52
+    53
+    54
+    55
+    56
+    57
+    58
+    59
+    60
+    61
+    62
+    63
+    64
+    65
+    66
+    67
+    68
+    69
+    70
+    71
+    72
+    73
+    74
+    75
+    76
+    77
+    78
+    79
+    80
+    81
+    82
+    83
+    84
+    85
+    86
+    87
+    88
+    89
+    90
+    91
+    92
+    93
+    94
+    95
+    96
+    97
+    98
+    99
+    100
+    101
+    102
+    103
+    104
+    105
+    106
+    107
+    108
+    109
+    110
+    111
+    112
+    113
+    114
+    115
+    116
+    117
+    118
+    119
+    120
+    121
+    122
+    123
+    124
+    125
+    126
+    127
+    128
+    129
+    130
+    131
+    132
+    133
+    134
+    135
+    136
+    137
+    138
+    139
+    140
+    141
+    142
+    143
+    144
+    145
+    146
+    147
+    148
+    149
+    150
+    151
+    152
+    153
+    154
+    155
+    156
+    157
+    158
+    159
+    160
+    161
+    162
+    163
+    164
+    165
+    166
+    167
+    168
+    169
+    170
+    171
+    172
+    173
+    174
+    175
+    176
+    177
+    178
+    179
+    180
+    181
+    182
+    183
+    184
+    185
+    186
+    187
+    188
+    189
+    190
+    191
+    192
+    193
+    194
+    195
+    196
+    197
+    198
+    199
+    200
+    201
+    202
+    203
+    204
+    205
+    206
+    207
+    window.onload=function(){
+//canvas
+        var cans=document.getElementById("myCanvas");
+//弹出框
+        var cover=document.getElementById("cover");
+        var showResult=document.getElementById("showResult");
+        var button=document.getElementById("button");
+        var can=cans.getContext("2d");
+//获取当前是第几关,存到本地,,每关都刷新页面重新加载
+        var checkPoint=JSON.parse(localStorage.getItem("num"));
+        if(checkPoint){
+            checkPoint=checkPoint;
+        }else{
+            checkPoint=1;
+        }
+//总共几关的简单配置,默认转动小球数,等待点击的小球数,还有显示第几关
+        var pass=[
+            [3,5,1],
+            [3,7,2],
+            [4,7,3],
+            [4,9,4],
+            [5,9,5],
+            [5,11,6],
+            [6,11,7],
+            [6,12,8],
+        ]
+//大院的中心点
+        var x=200;
+        var y=200;
+//每次转动的速度(角度)
+        var speed=1;
+//小球的半径
+        var smallPi=15;
+//调动小球转动
+        var run;
+//转动小球数组
+        var balls=[];
+//等待小球数组
+        var waits=[];
+//用来存放第几关
+        var showPass;
+        var mark=true;
+//根据当前第几关配置
+        if(checkPoint){
+//默认的显示转动小球的个数和角度
+            for(var i=0;i<pass[checkPoint-1][0];i++){
+                console.log(360/pass[checkPoint-1][0]*i);
+                balls.push({
+                    deg:360/pass[checkPoint-1][0]*i,   //平均分三份
+                    num:""
+                });
+            }
+//等待小球的数量和文本
+            for(var i=pass[checkPoint-1][1];i>0;i--){
+                waits.push(
+                    {
+                        deg:"",
+                        num:i
+                    }
+                );
+            }
+//大球第几关的显示文本
+            showPass=pass[checkPoint-1][2];
+        }
+//设置中心点
+        can.translate(x,y);
+//画大球
+        function bigRound(){
+            can.save();
+            can.beginPath();
+            can.fillStyle="white";
+            can.arc(0,0,25,0,2*Math.PI);
+            can.fill();
+            can.closePath();
+            can.stroke();
+            can.font="25px 微软雅黑";
+            can.fillStyle="black";
+            can.fillText(showPass,-6,10);
+            can.restore();
+        }
+//画转动小球
+        function createSmallRound(){
+            can.clearRect(-180,-150,cans.width,300);
+            bigRound();
+            can.save();
+            for(var i=0;i<balls.length;i++){
+                can.save();
+// console.log(balls[i]);
+                can.rotate(balls[i].deg*Math.PI/180);
+
+                balls[i].deg=balls[i].deg+1;
+                if(balls[i].deg>=360){
+                    balls[i].deg=0;
+                }
+
+//绘制转动杆子上
+                can.beginPath();
+                can.lineWidth=5;
+                can.strokeStyle="white";
+                can.fillStyle="white";
+                can.moveTo(25,0);
+                can.lineTo(125,0);
+                can.fill();
+                can.closePath();
+                can.stroke();
+//绘制转动杆子上的 ball
+                can.beginPath();
+                can.fillStyle="white";
+                can.arc(125,0,smallPi,0,2*Math.PI);
+                can.fill();
+                can.closePath();
+                can.stroke();
+//小球上的字
+                can.font="20px 微软雅黑";
+                can.fillStyle="black";
+                can.fillText(balls[i].num,115,8)
+                can.restore();
+            }
+            can.restore();
+//重复转动
+            run= window.requestAnimationFrame(createSmallRound);
+        }
+        createSmallRound();
+//等待小球
+        function waitRound(){
+            can.clearRect(-180,150,cans.width,350);
+            can.save();
+            for(var i=0;i<waits.length;i++){
+                can.beginPath();
+                can.fillStyle="white";
+                can.arc(0,150+(smallPi*2)*(waits[i].num+1),smallPi,0,2*Math.PI);
+                can.fill();
+                can.closePath();
+                can.stroke();
+
+                can.font="20px 微软雅黑";
+                can.fillStyle="black";
+                can.fillText(waits[waits.length-1-i].num,-9,157+(smallPi*2)*(waits[i].num+1));
+                can.restore();
+            }
+        }
+        waitRound();
+//点击事件
+        cans.onclick=function(){
+//判断剩余口红的数量
+            if(waits.length!= ""){
+//等待小球删除第一个小球记录,添加到转动小球数组
+                var ball=waits.shift();
+
+                ball.deg=90;
+                console.log(balls);
+//添加的小球从90度添加,判断是否与转动的小球角度有重合
+                for(var i=0;i<balls.length;i++){
+//如果角度重合则游戏失败
+                    if(balls[i].deg>74 && balls[i].deg<106){
+                        cans.onclick=null;
+                        mark=false;
+                        setTimeout(function(){
+                            cover.style.display="block";
+                            showResult.innerText="闯关失败";
+                            button.innerText="重新来";
+                            cancelAnimationFrame(run);
+                            button.onclick=function(){
+                                clicks(0);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                            return;
+                        },100)
+                    }
+                }
+//角度没有重合的,正常添加到转到小球
+                balls.push(ball);
+                waitRound();
+//等待为0时,游戏成功进去入下一关
+                if(waits.length==0 && mark==true){
+                    setTimeout(function(){
+                        cover.style.display="block";
+                        if(checkPoint==pass.length){
+                            showResult.innerText="恭喜通过全关";
+                            button.innerText="第一关";
+                            button.onclick=function(){
+                                var lengths=pass.length-1;
+                                clicks(-7);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                        }else{
+                            showResult.innerText="闯关成功";
+                            button.innerText="下一关";
+                            button.onclick=function(){
+                                clicks(1);
+                                cover.style.display="none";
+                                location.reload();
+                            }
+                        }
+                        cancelAnimationFrame(run);
+                    },500)
+                }
+            }
+        }
+//弹出框的点击按钮会对游戏成功或失败判断存储对应的游戏关数到本地,页面刷新时会获取使用
+        function clicks(num){
+            checkPoint+=num;
+            localStorage.setItem("num",JSON.stringify(checkPoint));
+        }
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas初体验</title>
+    <style>
+        #c {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c" width="600"   height="300"></canvas>
+    <script>
+        /*
+        canvas 是一个可以使用JavaScript，在其中绘制图形的HTML5元素
+            canvas 原意即是 画布 --------- 最早是苹果提出的一个方案
+        */
+        /*
+        *  绘图
+        *  数据可视化
+        *  动画与游戏
+        *  banner广告
+        *  多媒体、虚拟实现、图形编程
+        * */
+        // 准备画布
+        var canvas = document.querySelector('#c');
+        // 生成画图工具
+        var ctx = canvas.getContext('2d'); // 注意 画图工具先生成路径
+        // 开始画线
+            // 讲画笔移动到某个坐标点
+        ctx.moveTo(0,150);
+            // 画一条水平直线
+        ctx.lineTo(600,150);
+            // 画一条垂直直线
+        ctx.moveTo(300,0)
+        ctx.lineTo(300,300);
+            // 线条颜色填充
+        ctx.stroke();
+
+        // canvas 兼容 (一般能够使用canvas的浏览器都可以使用其基本功能)
+        var can = document.getElementById('c');
+        if ( can.getContext ) {
+            var stx = canvas.getContext('2d');
+            // 开始画图
+        }else{
+            alert('canvas不支持');
+        }
+    </script>
+</body>
+</html>

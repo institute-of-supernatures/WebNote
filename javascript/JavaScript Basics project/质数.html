@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质数</title>
+</head>
+<body>
+<script>
+    /*
+    质数：除去1和他本身，不能够被其他数除尽的数称之为质数
+     */
+    function isPrime () {
+        var z = 1;
+        for ( var i = 2 ; i <= 1000 ; i ++ ) { // 遍历1000内的数
+            var flar = true; // 默认 i 是质数
+            for ( var j = 2 ; j < i ; j ++ ) { // 声明一个小于 i 的数（除去 1 ）
+                if ( i % j == 0 ) { // 验证 i 是否 能被 j 除尽（验证 i 是否是质数）
+                    flar = false; // 如果 i 不是质数，则返回 false
+                }
+            }
+            if ( flar ) { // 验证 trun / false （质数/平数）
+                document.write ( i + " , &nbsp;" ); // true （质数）: 记录质数的值（在body中打印出来）
+                z ++;
+                if ( z % 10 == 0 ) { // 循环验证 z 是不是 10 的倍数
+                    document.write ( "<br/>" );  // z 是10的倍数是在body中换行
+                }
+            }
+        }
+    }
+    isPrime (); // 调用 isPrime 函数
+</script>
+</body>
+</html>

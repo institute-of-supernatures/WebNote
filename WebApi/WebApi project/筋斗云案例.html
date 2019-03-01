@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        .nav {
+            width: 800px;
+            height: 42px;
+            margin: 100px auto;
+            /*background-color: red;*/
+            background: #fff url('images/rss.png') no-repeat right center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .nav li {
+            width: 83px;
+            height: 42px;
+            /*background-color: red;*/
+            text-align: center;
+            line-height: 42px;
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            position: relative;
+        }
+
+        .nav span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 83px;
+            height: 42px;
+            background: url('images/cloud.gif') no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <span id="cloud" ></span>
+    <ul id="navBar">
+        <li>北京保健</li>
+        <li>上海保健</li>
+        <li>广州保健</li>
+        <li>深圳保健</li>
+        <li>武汉保健</li>
+        <li>关于保健</li>
+        <li>联系保健</li>
+        <li>招贤保健</li>
+    </ul>
+</div>
+<script src=" ./../common.js "></script>
+<script src=" ./../animation.js "></script>
+<script>
+     /*
+     分析需求：
+        筋斗云缓动到鼠标的移入的li元素
+        鼠标移出筋斗云缓动到默认li元素
+        鼠标点击筋斗云切换默认li元素
+     思路分析：事件三要素
+         获取元素：
+         注册事件：
+         事件处理：
+     */
+     var cloud = id('cloud');
+     var navBar = id('navBar');
+
+     var owner = navBar.children[0];
+     for ( var i = 0 ; i < navBar.children.length ; i ++ ) {
+         navBar.children[i].onmouseover = function () {
+             animationSlow(cloud,{
+                 left:this.offsetLeft
+             })
+         }
+         navBar.children[i].onmouseout = function () {
+             animationSlow(cloud,{
+                 left:owner.offsetLeft
+             })
+         }
+         navBar.children[i].onclick = function () {
+             owner = this;
+         }
+     }
+</script>
+</body>
+</html>

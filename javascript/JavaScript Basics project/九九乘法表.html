@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>九九乘法表</title>
+    <style>
+        td{
+            border: 1px solid #0f0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    // 大乘法口诀表
+    document.write('<table  style="width: 80%; height: 200px; border-collapse: collapse;">');
+    for (i = 1 ; i <= 9 ; i++ ) {
+        document.write('<tr>');
+        for(j = 1 ; j <= 9 ; j++ ) {
+            var num = i * j;
+            document.write('<td>'+j+ ' * ' + i + ' = '+num+'</td>');
+        }
+        document.write('</tr>');
+    }
+    document.write('</table>' + '<br>'+'<hr>');
+    // 小乘法口诀表
+    document.write('<table  style="width: 70%; height: 300px;color: #f10215;border-collapse: collapse;">');
+    for (i = 1 ; i <= 9 ; i++ ) {
+        document.write('<tr>');
+        for(j = 1 ; j <= i ; j++ ) {
+            var num = i * j;
+            document.write('<td >'+j+ ' * ' + i + ' = '+num+'</td>');
+        }
+        document.write('</tr>');
+    }
+    document.write('</table>');
+</script>
+</body>
+</html>

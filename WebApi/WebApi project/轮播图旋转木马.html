@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马</title>
+    <style>
+        /*初始化  reset*/
+        blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+        body,button,input,select,textarea{font:12px/1.5 "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;color: #666;}
+        ol,ul{list-style:none}
+        a{text-decoration:none}
+        fieldset,img{border:0;vertical-align:top;}
+        a,input,button,select,textarea{outline:none;}
+        a,button{cursor:pointer;}
+        .wrap {
+            width: 1200px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+        .slide {
+            height: 500px;
+            position: relative;
+        }
+        .slide li {
+            position: absolute;
+            left: 200px;
+            top: 0;
+        }
+        .slide li img {
+            width: 100%;  /*让图片的大小和父盒子一样的大，要不然会出问题，会撑出父盒子*/
+        }
+        .arrow {
+            display: none;
+        }
+        .prev,.next {
+            width: 76px;
+            height: 112px;
+            position: absolute;
+            top: 50%;
+            margin-top: -56px;
+            /*background-color: red;*/
+            background: url(images/prev.png) no-repeat;
+            z-index: 99;
+        }
+        .next {
+            right: 0;
+            background-image: url(images/next.png);
+        }
+
+        .slide .one {
+            width:400px;
+            top: 20px;
+            left: 50px;
+            opacity: 0.2;
+            z-index: 2
+        }
+        .slide .two {
+            width: 600px;
+            top: 70px;
+            left: 0px;
+            opacity: 0.8;
+            z-index: 3
+        }
+        .slide .three {
+            width: 800px;
+            top: 100px;
+            left: 200px;
+            opacity: 1;
+            z-index: 4
+        }
+        .slide .four {
+            width: 600px;
+            top: 70px;
+            left: 600px;
+            opacity: 0.8;
+            z-index: 3
+        }
+        .slide .five {
+            width:400px;
+            top: 20px;
+            left: 750px;
+            opacity: 0.2;
+            z-index: 2
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <div class="slide" id="slide">
+        <ul>
+            <li class="one"><a href=""><img src="images/bingbing.jpg" /></a></li>
+            <li class="two"><a href=""><img src="images/lingengxin.jpg" /></a></li>
+            <li class="three"><a href=""><img src="images/yuanyuan.png" /></a></li>
+            <li class="four"><a href=""><img src="images/slidepic4.jpg" /></a></li>
+            <li class="five"><a href=""><img src="images/slidepic5.jpg" /></a></li>
+        </ul>
+        <div class="arrow" id="arrow">
+            <a href="javascript:;" class="prev" id="arrLeft"></a>
+            <a href="javascript:;" class="next" id="arrRight"></a>
+        </div>
+    </div>
+</div>
+
+<script src=" ./../common.js "></script>
+<script src=" ./../animation.js "></script>
+<script>
+    /*
+    将数组最后一个元素移动到最前面
+        1、先删除最后一个元素 arr.pop();
+        2、将删除的元素加入最前面 arr.unshift( arr.pop() );
+     */
+    /*
+    将数组的第一个元素移到最后面
+        1、先删除第一个元素  arr.shift();
+        2、将删除的元素添加在最后面  arr.push( rr.shift() );
+     */
+    var wrap = id('wrap');
+    var slide = id('slide');
+    var ul = slide.children[0];
+    var arrow = id('arrow');
+    var arrLeft = id('arrLeft');
+    var arrRight = id('arrRight');
+
+    var center = [
+        {
+            width:400,
+            top: 20,
+            left: 50,
+            opacity: 0.2,
+            zIndex: 2
+        },
+        {
+            width: 600,
+            top: 70,
+            left: 0,
+            opacity: 0.8,
+            zIndex: 3
+        },
+        {
+            width: 800,
+            top: 100,
+            left: 200,
+            opacity: 1,
+            zIndex: 4
+        },
+        {
+            width: 600,
+            top: 70,
+            left: 600,
+            opacity: 0.8,
+            zIndex: 3
+        },
+        {
+            width:400,
+            top: 20,
+            left: 750,
+            opacity: 0.2,
+            zIndex: 2
+        }
+    ];
+    var timeID = 0;
+    function nextPage () {
+        timeID = setInterval(function () {
+            center.unshift( center.pop() );
+            for ( var i = 0 ; i < ul.children.length ; i ++ ) {
+                animationSlow(ul.children[i],center[i]);
+            }
+        },3000);
+    }
+    nextPage();
+    wrap.onmouseover = function () {
+        arrow.style.display = 'block';
+        clearInterval(timeID);
+    }
+    wrap.onmouseout = function () {
+        arrow.style.display = 'none';
+        nextPage();
+    }
+
+    arrRight.onclick = function () {
+        center.unshift( center.pop() );
+        for ( var i = 0 ; i < ul.children.length ; i ++ ) {
+            animationSlow(ul.children[i],center[i]);
+        }
+    }
+
+    arrLeft.onclick = function () {
+        center.push( center.shift() );
+        for ( var i = 0 ; i < ul.children.length ; i ++ ) {
+            animationSlow(ul.children[i],center[i]);
+        }
+    }
+</script>
+</body>
+</html>

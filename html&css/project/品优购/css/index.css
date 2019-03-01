@@ -1,0 +1,380 @@
+/* 主体 */
+
+.main {
+    width: 980px;
+    height: 455px;
+    float: right;
+    margin-top: 10px;
+}
+
+.pyg_banner {
+    width: 720px;
+    height: 455px;
+    float: left;
+    position: relative;
+}
+
+.mod_news {
+    width: 250px;
+    height: 455px;
+    float: right;
+}
+
+.main .pyg_banner i.icon-fanhui,
+.main .pyg_banner i.icon-gengduo {
+    position: absolute;
+    width: 36px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* left: 0; */
+    top: 50%;
+    margin-top: -30px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    display: none;
+    color: #2e2e2e;
+    border-radius: 0 30px 30px 0;
+}
+
+.main .pyg_banner i.icon-gengduo {
+    right: 0;
+    border-radius: 30px 0 0 30px;
+}
+
+.main .pyg_banner:hover i {
+    display: block;
+}
+
+.main .pyg_banner i:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* 鼠标效果 */
+    cursor: pointer;
+}
+
+/* 新闻快报模块 */
+
+.news {
+    width: 249px;
+    height: 163px;
+    border: 1px solid #e5e5e5;
+}
+
+.news .news-tit {
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    padding-left: 14px;
+    border-bottom: 1px dotted #e5e5e5;
+    color: #556666;
+}
+
+.news .news-tit a {
+    float: right;
+    font-size: 12px;
+    margin-right: 14px;
+    color: #556666;
+}
+
+.news-links ul {
+    margin-top: 6px;
+}
+
+.news-links li {
+    line-height: 24px;
+    margin-left: 10px;
+}
+
+.news-links li a {
+    color: #666666;
+}
+
+.news a:hover {
+    color: #f10215;
+}
+
+.lifeservice {
+    height: 209px;
+    width: 249px;
+    border-left: 1px solid #ccc;
+}
+
+.lifeservice li {
+    float: left;
+    width: 62px;
+    height: 70px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.lifeservice li:nth-child(4n) {
+    width: 59px;
+}
+
+.lifeservice li.tag {
+    height: 66px;
+}
+
+.lifeservice li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    color: #666;
+}
+
+.lifeservice li a:hover {
+    color: #f10215;
+}
+
+.lifeservice a .icon {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background: url("./../img/icons.png") -16px -16px;
+    margin: 12px auto 12px;
+}
+
+.lifeservice li:nth-child(2) .icon {
+    background-position: -78px -16px;
+}
+
+.lifeservice li:nth-child(3) .icon {
+    background-position: -140px -16px;
+}
+
+.lifeservice li:nth-child(4) .icon {
+    background-position: -206px -16px;
+}
+
+.lifeservice li:nth-child(5) .icon {
+    background-position: -16px -86px;
+}
+
+.lifeservice li:nth-child(6) .icon {
+    background-position: -78px -86px;
+}
+
+.lifeservice li:nth-child(7) .icon {
+    background-position: -140px -86px;
+}
+
+.lifeservice li:nth-child(8) .icon {
+    background-position: -206px -86px;
+}
+
+.lifeservice li:nth-child(9) .icon {
+    background-position: -16px -158px;
+}
+
+.lifeservice li:nth-child(10) .icon {
+    background-position: -78px -158px;
+}
+
+.lifeservice li:nth-child(11) .icon {
+    background-position: -140px -154px;
+}
+
+.lifeservice li:nth-child(12) .icon {
+    background-position: -206px -158px;
+}
+
+.bargain {
+    margin-top: 5px;
+}
+
+/* 推荐模块 */
+
+.recommend {
+    height: 163px;
+    margin-top: 10px;
+}
+
+.recommend .recomd-hd {
+    float: left;
+    width: 206px;
+    height: 163px;
+    background-color: #5c5351;
+}
+
+.recommend .recomd-hd a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.recommend .recomd-hd img {
+    display: block;
+    margin: 30px auto 10px;
+}
+
+.recommend .recomd-hd span {
+    font-size: 18px;
+    color: #fff;
+}
+
+.recommend .recomd-bd {
+    float: right;
+    width: 994px;
+    height: 163px;
+    background-color: #ebebeb;
+}
+
+.recommend .recomd-bd li {
+    float: left;
+    border-right: 1px solid #ddd;
+    width: 247px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.recomd-bd li:last-child {
+    border-right: 0;
+}
+
+.w247 {
+    width: 247px;
+}
+
+.w250 {
+    width: 250px;
+}
+
+.fixed_nav {
+    width: 66px;
+    position: fixed;
+    top: 300px;
+    left: 50%;
+    margin-left: -676px;
+    background-color: #fff;
+}
+
+.fixed_nav li {
+    height: 31px;
+    width: 66px;
+}
+
+.fixed_nav li a {
+    display: block;
+    height: 30px;
+    width: 56px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+    border-bottom: 1px solid #ededed;
+}
+
+.fixed_nav li:hover {
+    background-color: #c81822;
+}
+
+.fixed_nav li:hover a {
+    border: 0;
+    color: #fff;
+}
+
+/* 产品楼层区 */
+
+.floor .box_hd {
+    height: 38px;
+    margin-top: 18px;
+    border-bottom: 2px solid #cb1312;
+}
+
+.box_hd h4 {
+    font-size: 14px;
+    float: left;
+    line-height: 38px;
+    color: #cf1311;
+}
+
+.floor .tab_list {
+    float: right;
+    margin-right: 10px;
+}
+
+.tab_list li {
+    float: left;
+    line-height: 38px;
+}
+
+.tab_list li a {
+    color: #696969;
+}
+
+.tab_list li.line {
+    width: 1px;
+    height: 12px;
+    background-color: #999;
+    margin: 13px 13px 0 13px;
+}
+
+.tab_list li:first-child a {
+    color: #c81822;
+}
+
+.tab_list li:hover a {
+    color: #c81822;
+}
+
+.floor .box_bd {
+    height: 360px;
+}
+
+.box_bd .tab_hot>li {
+    height: 360px;
+    float: left;
+}
+
+.floor .box_bd .w210 {
+    width: 210px;
+    background-color: #f9f9f9;
+}
+
+.box_bd .w210 li {
+    float: left;
+    height: 32px;
+    width: 85px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: 14px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.w210 li a {
+    color: #6e6e6e;
+}
+
+.w210 li:hover a {
+    color: #c81822;
+}
+
+.box_bd .w210>a {
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.floor .box_bd .w329 {
+    width: 329px;
+}
+
+.floor .box_bd .w219 {
+    width: 219px;
+    border-right: 1px solid #ededed;
+}
+
+.box_bd .w219 a {
+    display: block;
+    border-bottom: 1px solid #ededed;
+}
+
+.floor .box_bd .w220 {
+    width: 220px;
+    height: 359px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}

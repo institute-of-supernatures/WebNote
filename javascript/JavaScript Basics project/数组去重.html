@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组重组</title>
+</head>
+<body>
+<script>
+    // 数组去重：把数组中重复的元素删除
+    // var arr = [ 20, 25, 66, 78, 25, 66, 39 ] // [20,25,66,78,39]
+
+    // a. 一
+    // 排序
+
+    // for ( var i = 0 ; i < arr.length - 1 ; i ++ ) { // i = 0 1 2 3
+    //     for ( var j = 0 ; j < arr.length - 1 - i ; j ++ ) {
+    //         if ( arr[ j ] > arr[ j + 1 ] ) { // 相邻元素比较大小 从小到大：>  从大到小：<
+    //             var temp = arr[ j ];
+    //             arr[ j ] = arr[ j + 1 ];
+    //             arr[ j + 1 ] = temp;
+    //         }
+    //     }
+    // }
+    // console.log ( arr );
+    // // 遍历排序后的数组，如果相邻元素不等，则添加到新数组
+    // var newArr = []
+    // for ( var i = 0 ; i < arr.length ; i ++ ) {
+    //     if ( arr[ i ] != arr[ i + 1 ] ) {
+    //         newArr[ newArr.length ] = arr[ i ];
+    //     }
+    // }
+    // console.log ( newArr );
+
+
+    // b. 二 、开关思想
+    /*
+    当某种操作只有两种状态，可以用布尔类型表示这两种状态
+        提出假设
+        验证假设
+        根据开关状态实现需求
+     */
+    // 数组去重：把数组中重复的元素删除
+    var arr = [ 20, 25, 66, 78, 25, 66, 39 ] // [20,25,66,78,39]
+    // 声明 空数组存储去重后的数组
+    var newArr = [];
+
+    for ( var i = 0 ; i < arr.length ; i ++ ) {
+        // 遍历arr，检查arr[ i ]在不在newArr中
+        // 声明一个布尔类型表示在与不在两种状态
+        var canAdd = true; // 默认没有重复元素，可以添加
+        // 遍历newArr，检查重复元素在不在
+        for ( var j = 0 ; j < newArr.length ; j ++ ) {
+            if ( arr[ i ] == newArr[ j ] ) { // 只要有任何一个元素相等，外部假设推翻
+                canAdd = false; // 只要有任何元素相等，开关变成false（存在相同元素，不添加）
+                break; // 推出循环
+            }
+        }
+        // 根据开关状态实现需求
+        if ( canAdd ) { // 如果上述代码返回true，则执行下面的代码
+            newArr[newArr.length] = arr[ i ]; // arr数组的元素动态的加入 newArr数组中
+        }
+    }
+    console.log ( newArr );
+
+</script>
+</body>
+</html>

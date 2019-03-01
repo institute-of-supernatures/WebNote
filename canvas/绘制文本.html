@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="400"></canvas>
+    <script>
+        /*
+        两种方法渲染文本
+            a. fillText(text,x,y[,maxxWidth]) 
+                在指定的(x,y)位置填充指定的文本,绘制的最大宽度可选
+            b. strokeText(text,x,y[,maxWidth])
+                在指定的(x,y)位置绘制文本边框,绘制的最大宽度可选
+        */
+       var ctx = document.getElementById('can').getContext('2d');
+       function draw(){
+           ctx.font= "48px serif";
+        //    ctx.fillText("Hello world",10,50);
+            ctx.strokeText("Hello world",10,50);
+       }
+       draw();
+       // 设置文本样式
+       /*
+        font = value  
+            当前绘制文本的样式,和css font属性相同 默认 10px sans-ertif;
+        textAlign = value
+            文本对齐选项 值包括 start ,end ,left ,right ,center 默认start
+        textBaseline = value
+            基线对齐选项 值包括 top ,hanging ,middle ,alphabetic ,ideographic ,bottom 默认alphabetic
+        direction = value
+            文本方向 值包括 ltr ,rtl ,inherit 默认是inherit
+       */
+
+       // 计算文大小 
+       // measureText() 返回一个TextMetrics对象的宽度, 所在像素
+       function getText(){
+           var text = ctx.measureText("foo");
+           ctx.fillText('font-size: '+text.width,10,100);
+           ctx.fillText("foo",10,200);
+       }
+       getText();
+    </script>
+</body>
+</html>

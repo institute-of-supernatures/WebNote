@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('can').getContext('2d');
+        ctx.beginPath();
+        // 指定渐变区域 
+        // 参数 开始的x,y轴 结束的x,y轴
+        // var grad = ctx.createLinearGradient(0,0,0,140);// 垂直渐变
+        // var grad = ctx.createLinearGradient(0,0,140,0); // 水平渐变
+        var grad = ctx.createLinearGradient(0,0,140,140); // 倾斜渐变
+        // 指定渐变颜色
+        grad.addColorStop(0,'red');
+        grad.addColorStop(0.5,'pink');
+        grad.addColorStop(1,'skyblue');
+        // 设置渐变为fillStyle
+        ctx.fillStyle = grad;
+
+        // 绘制矩形
+        ctx.rect(0,0,140,140);
+        ctx.fill();
+    </script>
+</body>
+</html>

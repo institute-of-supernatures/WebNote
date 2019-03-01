@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 800px;
+            height: 600px;
+            border: 1px solid red;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        // 创建img对象
+        var img = new Image();
+        img.src = "./images/DMMban.png";
+
+        // img加载完成执行函数
+        img.onload = function () {
+
+            // 初始步数
+            var steps = 0;
+
+            // 小人的宽高
+            var h = img.height / 4;
+            var w = img.width / 4;
+
+            // 小人的起始位置,画布的左下角
+            var x = 0;
+            var y = 600 - h;
+
+            // 使用img中的第几个小人
+            var xindex = 0;
+            var yindex = 0;
+
+            // 37：左， 38： 上， 39： 右， 40： 下
+            // 键盘按下事件
+            window.onkeydown = function (e) {
+                e = e || window.event;
+                // console.log(e.keyCode);
+
+                // 判断并处理键盘事件
+                switch (e.keyCode) {
+                    case 37: // 往左
+                        // 边界判断
+                        if (x <= 0) return;
+                        // 清除画布
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        yindex = 1;
+                        steps += 1;
+                        xindex = steps % 4;
+                        x -= 15;
+                        // 创建小人
+                        context.drawImage(img, xindex * w, yindex * h, w, h, x, y, w, h);
+                        break;
+                    case 38: // 往上
+                        // 边界判断
+                        if (y <= 0) return;
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        yindex = 3;
+                        steps += 1;
+                        xindex = steps % 4;
+                        y -= 15;
+                        context.drawImage(img, xindex * w, yindex * h, w, h, x, y, w, h);
+                        break;
+                    case 39: // 往右
+                        // 边界判断
+                        if (x >= canvas.width - w) return;
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        yindex = 2;
+                        steps += 1;
+                        xindex = steps % 4;
+                        x += 15;
+                        context.drawImage(img, xindex * w, yindex * h, w, h, x, y, w, h);
+                        break;
+                    case 40: // 往下
+                        // 边界判断
+                        if (y >= canvas.height - h) return;
+                        context.clearRect(0, 0, canvas.width, canvas.height);
+                        yindex = 0;
+                        steps += 1;
+                        xindex = steps % 4;
+                        y += 15;
+                        context.drawImage(img, xindex * w, yindex * h, w, h, x, y, w, h);
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

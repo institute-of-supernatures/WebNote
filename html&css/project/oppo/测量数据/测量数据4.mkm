@@ -1,0 +1,19 @@
+<MKM version="2.0" minAppVer="2.0.0" imageFileUrl="">
+  <Marks>
+    <LengthMark x="317" y="506" color="16711680" length="512" direction="12"/>
+    <LengthMark x="611" y="459" color="16711680" length="22" direction="3"/>
+    <LengthMark x="658" y="444" color="16711680" length="15" direction="3"/>
+    <LengthMark x="644" y="499" color="16711680" length="14" direction="3"/>
+    <LengthMark x="414" y="659" color="16711680" length="188" direction="12"/>
+    <LengthMark x="253" y="647" color="16711680" length="12" direction="3"/>
+    <LengthMark x="247" y="688" color="16711680" length="18" direction="3"/>
+    <LengthMark x="1373" y="642" color="16711680" length="120" direction="3"/>
+    <LengthMark x="1373" y="586.5" color="16711680" length="55" direction="3"/>
+    <ColorMark x="1282" y="646" color="16711680" offsetX="20" offsetY="19" defaultDirection="9" colorSystem="hex"/>
+    <LengthMark x="1340" y="693" color="16711680" length="20" direction="3"/>
+    <LengthMark x="1354" y="734" color="16711680" length="14" direction="3"/>
+    <LengthMark x="515" y="858" color="16711680" length="30" direction="3"/>
+    <LengthMark x="1349" y="884" color="16711680" length="20" direction="3"/>
+    <LengthMark x="1282" y="858" color="16711680" length="26" direction="3"/>
+  </Marks>
+</MKM>

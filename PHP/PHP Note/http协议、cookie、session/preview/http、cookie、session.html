@@ -1,0 +1,714 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>http、cookie、session</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>typora-copy-images-to: images</p>
+<h2 id="typora-root-url-images">typora-root-url: images</h2>
+<h2 id="http-cookie-session">http协议、cookie和session</h2>
+<h3 id="-">学习目标</h3>
+<ul>
+<li>理解http协议</li>
+<li>理解请求、响应的概念</li>
+<li>理解cookie是什么</li>
+<li>掌握cookie使用</li>
+<li>理解session是什么</li>
+<li>掌握session使用</li>
+</ul>
+<h3 id="1-http-">1. http协议</h3>
+<h4 id="1-1-http-">1.1 http概念：</h4>
+<p><strong>协议</strong>：就是一个规范行为的约定。</p>
+<p>​    我们生活中有多种多样的协议，诸如：用人协议、租房协议等。</p>
+<p>​    用人协议：就是规范了用人应该遵守的一些行为</p>
+<p>​    租房协议：规范了租房时的一些行为</p>
+<p>​    那么    <code>http协议</code> 又是什么呢？</p>
+<p><strong>http</strong>：HyperText（超文本） Transfer（传输） Protocol（协议）</p>
+<p>​      从字面上我们可以看到，首先http也是一种协议，是一种用来约束    <code>超文本传输</code> 时的行为。</p>
+<p>​    </p>
+<p><code>超文本</code>是什么？其实就是<code>html</code></p>
+<blockquote>
+<p>html全称：HyperText Markup Language  超文本标记语言</p>
+</blockquote>
+<p><strong>所以http就是一个专门用来做网页传输的一种协议。</strong></p>
+<h4 id="1-2-http-">1.2 http解析</h4>
+<p>​    <img src="images/1521541410589-1521541412198.png" alt="52154141058"></p>
+<p>我们知道，访问一个网页无非就是<code>浏览器</code>发起<code>请求</code>，<code>服务器</code>对其<code>响应</code>。</p>
+<p><strong>说人话</strong>：即浏览器对服务器说：哥们，我要看A网页（请求）。然后服务器把A网页的内容发回给浏览器（响应）</p>
+<p>而http协议就是一套规范<code>请求</code>格式，和<code>响应</code>格式的约定</p>
+<p>也即：要看网页可以，但你得按我的规范来要，以及我按规范给你返回。这套规范就是http协议</p>
+<h5 id="1-2-1-">1.2.1 请求报文</h5>
+<p>​    浏览器发请求到底是发什么东西呢？其实就是一段按照协议格式写好的内容。我们把这段内容叫    <code>请求报文</code></p>
+<p><strong>如何看到<code>请求报文</code></strong></p>
+<p>​    打开浏览器，按F12，弹出底部栏后，再点   <code>Network</code></p>
+<p>如图：</p>
+<p><img src="images/1521542261005.png" alt="52154226100"></p>
+<p>然后下面红框区域，就是浏览器本次发送的所有<code>请求记录</code></p>
+<p><img src="images/1521542352697.png" alt="52154235269">然后我们点击本次我们发请求的地址，如<code>127.0.0.1</code></p>
+<p><img src="images/1521542415318.png" alt="52154241531"></p>
+<p>右侧弹出界面，然后选<code>Headers</code>，我们发现右侧有<code>Request</code>和 <code>Response</code>，分别对应的就是<code>请求报文</code>和<code>响应报文</code></p>
+<p>我们点开<code>Request Headers</code>，默认显示的是浏览器优化后的显示结果，如果我们要看到<code>请求报文</code>真实是什么样子的。则点<code>view source</code>，如图分别为三大部分：<code>请求行</code>、<code>请求头</code>、<code>请求正文（也叫请求体）</code></p>
+<p><img src="images/1521595909958.png" alt="52159590995"></p>
+<p><code>请求行</code>：指明本次请求是<code>get</code>请求还是<code>post</code>请求（也有其他请求，例如put、delete、trace等，但不常用，常用的主要为get何post），以及指明本次请求遵守的协议版本</p>
+<p><code>请求头</code>：本部分的格式以<code>键值对</code>的形式组成，每行一对。本部分大概的内容有：请求目的地域名、连接状态、缓存状态、发起请求的浏览器信息、字符编码等。请求头后面会有一个空行，作为请求头部分结束的标记。</p>
+<p><code>请求正文</code>：本次请求发送给服务器的附加信息。一般<code>get请求</code>的请求正文为空</p>
+<p>接下来我们看一个post请求的请求报文。</p>
+<p>首先，界面代码如下：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;form action=&quot;login.php&quot; method=&quot;POST&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&#39;id&#39; placeholder=&quot;请输入账号&quot;&gt;
+        &lt;input type=&quot;password&quot; name=&#39;pwd&#39; placeholder=&quot;请输入密码&quot;&gt;
+        &lt;input type=&quot;submit&quot;&gt;
+    &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>当点击提交后，提交到login.php。使用post请求。</p>
+<p>我们看到的请求报文如下：</p>
+<p><img src="images/1521599849324.png" alt="52159984932"></p>
+<p>发现：无论是<code>get</code>还是<code>post</code>发起的请求，格式都是三大部分，<code>请求行</code>、<code>请求头</code>、<code>请求体</code>。</p>
+<p>主要差别在，请求行里，变成了<code>post</code>请求，请求体也就是请求正文里有了内容。<code>get</code>请求体里没内容主要是因为<code>get</code>请求把数据主要通过网址传递过去。而<code>post</code>是通过请求报文传递过去</p>
+<blockquote>
+<p>总结： 请求报文里主要包含了要访问的文件、和在请求时传递给服务器的数据、发请求的系统环境等。</p>
+</blockquote>
+<p>附：请求头部分内容说明</p>
+<table>
+<thead>
+<tr>
+<th><strong>请求头</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Host</strong></td>
+<td>接受请求的服务器地址，可以是IP:端口号，也可以是域名</td>
+</tr>
+<tr>
+<td><strong>User-Agent</strong></td>
+<td>发送请求的应用程序名称</td>
+</tr>
+<tr>
+<td><strong>Connection</strong></td>
+<td>指定与连接相关的属性，如Connection:Keep-Alive</td>
+</tr>
+<tr>
+<td><strong>Accept-Charset</strong></td>
+<td>通知服务端可以发送的编码格式</td>
+</tr>
+<tr>
+<td><strong>Accept-Encoding</strong></td>
+<td>通知服务端可以发送的数据压缩格式</td>
+</tr>
+<tr>
+<td><strong>Accept-Language</strong></td>
+<td>通知服务端可以发送的语言</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-2-2-">1.2.2 响应报文</h5>
+<p>响应报文就是浏览器收到请求后，对浏览器所做出的响应（即回应）。包含三大部分：<code>状态行</code>，<code>响应头</code>，<code>响应体（响应正文）</code></p>
+<p><img src="images/1521603363421.png" alt="52160336342"></p>
+<p>状态行：（HTTP/1.1）协议版本、（200）状态码、（OK）状态消息</p>
+<p>响应头：包含响应时间、服务器环境、响应体的格式等，响应头后面会有一个空行代表结尾。</p>
+<p>响应体：就是发回的文件内容。例如浏览器请求index.html界面，那么假设服务器能正常访问到这个文件的情况下，服务器会把index.html里的内容当做响应体发回给浏览器，然后浏览器自己再解析。</p>
+<p>查看响应体方法如图：</p>
+<p><img src="images/1521602781385.png" alt="52160278138"></p>
+<blockquote>
+<p>总结：响应报文就是服务器对浏览器这次请求的一个回应，要么告诉浏览器失败，要么给浏览器发回一段内容并告诉它解析格式。</p>
+</blockquote>
+<p>附：</p>
+<p>状态码一览</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>响应成功</td>
+</tr>
+<tr>
+<td>302</td>
+<td>发生跳转</td>
+</tr>
+<tr>
+<td>400</td>
+<td>客户端请求有语法错误，不被服务器理解</td>
+</tr>
+<tr>
+<td>403</td>
+<td>服务器收到请求，但拒绝提供服务</td>
+</tr>
+<tr>
+<td>404</td>
+<td>请求的资源不存在</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器内部错误</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-2-3-">1.2.3 一次完整的浏览器请求和服务器响应图解</h5>
+<p><img src="images/1521618058059.png" alt="52161805805"></p>
+<p>说明：</p>
+<p>​    1.服务器为什么能收到浏览器的请求，是因为服务器装了Apache。</p>
+<p>​    2.如果浏览器请求的是.html或者.txt等格式的文件，服务器会直接把这个文件找到并读取内容做成响应报文发回给浏览器</p>
+<p>​    3.如果浏览器请求的是.php文件，那么会先把这个php文件先交给    <code>php7apache2_4.dll</code>去执行（本处细节在第一天有讲），把执行后的结果再做成响应报文发回给浏览器</p>
+<p>​    4.如果服务器找不到浏览器要请求的文件，响应报文中也有响应体，响应体是一个404 Not Found的页面，状态码是404</p>
+<h3 id="2-cookie">2. cookie</h3>
+<h4 id="2-1-">2.1 应用场景</h4>
+<p>​    我们在浏览一些网站时，会发现有些网站能记住我们的一些信息。例如，京东就会把你上次登录后的昵称给记录上。如图</p>
+<p><img src="images/1521623138901.png" alt="52162313890"></p>
+<p>​    那么，这种方式是怎么实现的呢？这种实现技术是程序员的&quot;小甜点&quot;--&gt;   <code>cookie</code></p>
+<p>​    </p>
+<h4 id="2-2-cookie-">2.2 cookie是什么</h4>
+<p>​    比如说你去超市买食品，带回家后突然发现食品过期了，这个时候你直接去超市，超市可不认识你。但是超市认识你的小票。凭小票就能知道你上一次来超市的各种信息。</p>
+<p>​    那么Cookie 就像是在超级市场买东西拿到的小票，由超市（Server）发给消费者（Browser），超市方面不用记住每一个消费者的脸，但是他们认识消费者手里的小票（Cookie），可以通过小票知道消费者之前的一些消费信息（在服务端产生的数据）。</p>
+<h4 id="2-3-cookie">2.3 使用cookie</h4>
+<h5 id="2-3-1-">2.3.1 需求：</h5>
+<p>​    有个网站有如下功能：</p>
+<p>​    第一次打开网站时，会在首页上方有一个app的广告界面，如图</p>
+<p><img src="images/1521684778235.png" alt="52168477823"></p>
+<p>点击<code>X</code>关闭按钮后，会弹出如下界面</p>
+<p><img src="images/1521684804586.png" alt="52168480458"></p>
+<p>然后只要是7天内打开这个网页，将不再显示此广告。</p>
+<h5 id="2-3-2-">2.3.2 分析</h5>
+<p>​    这是一个典型用    <code>cookie</code>做的功能，浏览器第一次访问此网站，服务器没有给他cookie（小票），所以服务器不认识它，依然要给它放广告，当点击<code>X</code>关闭后，服务器会给浏览器一个cookie（小票）记录下来，那么下次浏览器再访问这个网站时，因为带着cookie（小票），服务器一下子就认出它来，不再给它放广告。</p>
+<h5 id="2-3-3-">2.3.3 实现：</h5>
+<p>​    1.新建一个   <code>index.php</code>文件，代码如下</p>
+<pre><code class="lang-php+HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .alert{
+
+            border:1px solid black;
+            width:230px;
+            text-align: center;
+            position: relative;
+        }
+        a{
+            position: absolute;
+            right:10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;container mt-4&quot;&gt;
+
+    &lt;!-- 此处等会添加判断cookie代码,决定要不要显示下面的广告  --&gt;
+    &lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot;&gt;
+      &lt;a class=&quot;close&quot; href=&quot;closeAD.php&quot;&gt;&amp;times;&lt;/a&gt;
+      &lt;strong&gt;屠龙宝刀，点击就送。&lt;/strong&gt; 
+      &lt;div&gt;关掉我就再也不出现了&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;h1&gt;Hello cookie&lt;/h1&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>新建一个<code>closeAD.php</code>，代码如下</p>
+<pre><code class="lang-php">&lt;?php
+
+    //给浏览器写入一个cookie,这个cookie名字叫closeAD
+    //值为off,
+    setcookie(&quot;closeAD&quot;,&#39;off&#39;);
+
+    //写完后重新跳转回index.php
+    header(&#39;location:index.php&#39;);
+?&gt;
+</code></pre>
+<p>此时，我们访问<code>index.php</code>，然后在浏览器界面按<code>F12</code>，然后点<code>Application</code>，再点<code>Cookies</code>，可以看到现在右侧什么都没显示。</p>
+<p><img src="images/1521689653869.png" alt="52168965386"></p>
+<p>然后，我们点击界面上的<code>x</code>关闭按钮，可以看到右侧多出了一条记录</p>
+<p><img src="images/1521689795803.png" alt="52168979580"></p>
+<p>这证明，我们用<code>setcookie</code>函数成功的给浏览器写入了一条cookie。</p>
+<p>总结：写入cookie基本语法：</p>
+<pre><code class="lang-php">setcookie(&#39;名&#39;,&#39;值&#39;);
+</code></pre>
+<p>那么现在，相当于浏览器有小票(cookie)，那么每次进超市（访问服务器），超市就该判断有没有小票，有小票不给广告。</p>
+<p>因此，修改<code>index.php</code>代码，代码主要写在  <code>&lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot;&gt;</code>上面</p>
+<p>详细代码如下：</p>
+<pre><code class="lang-php">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .alert{
+
+            border:1px solid black;
+            width:230px;
+            text-align: center;
+            position: relative;
+        }
+        a{
+            position: absolute;
+            right:10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;container mt-4&quot;&gt;
+
+
+    &lt;?php
+        //如果cookie中不存在closeAD,那么就显示下面的div
+        if(!isset($_COOKIE[&#39;closeAD&#39;])):
+    ?&gt;
+    &lt;!-- 广告部分 --&gt;
+    &lt;div class=&quot;alert alert-warning alert-dismissible fade show&quot;&gt;
+      &lt;a class=&quot;close&quot; href=&quot;closeAD.php&quot;&gt;&amp;times;&lt;/a&gt;
+      &lt;strong&gt;屠龙宝刀，点击就送。&lt;/strong&gt; 
+      &lt;div&gt;关掉我就再也不出现了&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;?php
+        endif;
+    ?&gt;
+
+    &lt;h1&gt;Hello cookie&lt;/h1&gt;
+
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>此时，以后无论什么时候用这个浏览器打开网页，广告都不会显示，除非自己删除cookie。</p>
+<p>总结：获取浏览器的cookie语法：</p>
+<pre><code class="lang-php">$_COOKIE[&#39;名&#39;];
+</code></pre>
+<p>我们之前看的案例，是7天有效期，而我们目前写的是永久有效，除非自己清楚浏览器cookie，那么怎样才能做cookie的有效期呢？这时候我们要用到cookie的第三个参数，设置失效时间</p>
+<p>用法如下：</p>
+<pre><code class="lang-php">setcookie(&#39;名&#39;,&#39;值&#39;,time() + 秒数);
+</code></pre>
+<p>例：</p>
+<pre><code class="lang-php">setcookie(&#39;login&#39;,&#39;ok&#39;,time() + 60); //代表60秒后失效
+</code></pre>
+<p>同样的道理，如果我们需要我们的广告cookie有效期为7天，就写成<code>time() + 60*60*24*7</code></p>
+<p>说明：60秒为1分钟 再乘以60 代表1小时 再乘以24代表一天，再乘以7代表一星期。</p>
+<p>修改后代码为：</p>
+<pre><code class="lang-php">&lt;?php
+
+    //给浏览器写入一个cookie,这个cookie名字叫closeAD
+    //值为off,10秒后删除这个cookie
+    setcookie(&quot;closeAD&quot;,&#39;off&#39;,time() + 60*60*24*7);
+
+    //写完后重新跳转回index.php
+    header(&#39;location:index.php&#39;);
+?&gt;
+</code></pre>
+<h4 id="2-4-cookie-">2.4 完整cookie交互流程：</h4>
+<p>首先，我们删掉之前浏览器已经存好的cookie，当做这是我们第一次访问网站。</p>
+<p>删cookie方法如图</p>
+<p><img src="images/1521700792182.png" alt="52170079218"></p>
+<p>然后重新访问网站，看浏览器发送的请求，如图</p>
+<p><img src="images/1521700902477.png" alt="52170090247"></p>
+<p>可以发现，此次发送的请求依然是跟之前学的请求没差别，就是向<code>服务器</code>请求<code>index.php</code>这个文件。然后服务器响应<code>index.php</code>执行后的内容回来。</p>
+<p><img src="images/1521700995040.png" alt="52170099504"></p>
+<p>即：</p>
+<p>​    <img src="images/1521701208085.png" alt="52170120808"></p>
+<p>接下来，我们关注重点的一步：点击<code>X</code>，让广告7天内不再显示的部分。</p>
+<p>如图点击<code>X</code></p>
+<p><img src="images/1521701303402.png" alt="52170130340"></p>
+<p>此次我们再来看请求报文和响应报文：</p>
+<p>请求报文如下：</p>
+<p><img src="images/1521701414736.png" alt="52170141473"></p>
+<p>因为此次请求的是服务器的<code>closeAD.php</code>，发现发送请求报文时还是跟之前普通的请求报文没差别。</p>
+<p>但仔细看响应报文，会发现跟之前的不太一样，如图</p>
+<p><img src="images/1521701582319.png" alt="52170158231"></p>
+<p>如图蓝色部分，这是跟我们之前看到的响应报文不一样的地方，在这个响应报文里多了一行<code>Set-Cookie</code>，这一行就是专门告诉浏览器，让浏览器保存一张小票（即cookie），以及告诉这个小票（即<code>cookie</code>）的内容是什么和失效时间。（这一步相当于去超市买东西，超市给你一张小票保存）</p>
+<p><img src="images/1521702076852.png" alt="52170207685"></p>
+<p>至此，我们就知道浏览器保存cookie的完整细节了，但是，cookie究竟是如何起到作用的呢？</p>
+<p>我们再看，当浏览器有cookie后，再访问我们的这个网站，在发送请求报文时会在里面带上这个cookie（这一步相当于以后你再去超市，就带着小票去了）</p>
+<p>如图：</p>
+<p><img src="images/1521702223457.png" alt="52170222345"></p>
+<p>因为<code>index.php</code> 里有代码做过判断，如果访问者没有cookie，那么才显示广告div，如果有cookie就不显示，所以只要浏览器有这个cookie，就一直看不到广告了。</p>
+<p>详细逻辑图如下：</p>
+<p><img src="images/1521703801067.png" alt="52170380106"></p>
+<h4 id="2-5-cookie">2.5 删除cookie</h4>
+<h5 id="2-5-1-">2.5.1 浏览器端自行删除：</h5>
+<p>​    首先按F12打开开发者工具，然后点击    <code>application</code>，再点击  <code>cookies</code> ，右侧找到并点击你要删除的那条cookie，最后点<code>x</code>就删掉了。</p>
+<p>如下图：</p>
+<p><img src="images/1522036413346.png" alt="52203641334"></p>
+<h5 id="2-5-2-">2.5.2 服务器端用代码删除：</h5>
+<p>我们知道，cookie是有有效期的，所以其实删除cookie的思路就是设置cookie，让它的过期时间为过去的时间即可</p>
+<p>语法如下：</p>
+<pre><code class="lang-php">setcookie(&#39;名&#39;,&#39;值&#39;,过去的某个时间);
+</code></pre>
+<p>例:</p>
+<pre><code class="lang-php">setcookie(&#39;closeAD&#39;,&#39;off&#39;,time() - 3600);
+</code></pre>
+<h4 id="2-6-cookie-1-">2.6 cookie案例1：记住登录名</h4>
+<p>有很多的网站，当你登录后，它会记住你的用户名，下次再登录时直接把用户名显示在界面上了，效果如图：</p>
+<p><img src="images/1521775614563.png" alt="52177561456"></p>
+<p>那么这个功能怎么实现的呢？其实也是用cookie，把信息保存在本地，在需要时再显示出来。</p>
+<p>步骤：</p>
+<p>1.新建<code>login.php</code>页面，代码如下：</p>
+<pre><code class="lang-php+HTML">&lt;?php
+
+    //先判断cookie里有没有username，如果有，就取出来赋值给变量$username，如果没有，就给$username赋值为空字符
+    $username = isset( $_COOKIE[&#39;username&#39;] ) ? $_COOKIE[&#39;username&#39;] : &#39;&#39;;
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action=&quot;check.php&quot; method=&quot;post&quot;&gt;
+
+        &lt;!-- 如果有cookie.此时value会为保存的用户名，否则为空 --&gt;
+        &lt;input type=&quot;text&quot; name=&#39;username&#39; placeholder=&quot;请输入用户名&quot; value=&quot;&lt;?php echo $username; ?&gt;&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&#39;userpwd&#39; placeholder=&quot;请输入密码&quot;&gt;
+        &lt;input type=&quot;submit&quot;&gt;
+
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.新建<code>check.php</code>页面，代码如下：</p>
+<pre><code class="lang-php">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+
+//取出提交来的账号和密码
+$username = $_POST[&#39;username&#39;];
+$pwd = $_POST[&#39;userpwd&#39;];
+
+//判断账号密码是否正确
+if($username == &#39;admin&#39; &amp;&amp; $pwd==&#39;123456&#39;){
+
+    echo &#39;登录成功&#39;;
+    //如果正确，把用户名写入浏览器cookie
+    setcookie(&#39;username&#39;,$username,time() + 60*60*24);
+
+}else{
+
+    echo &#39;账号或密码错误！&#39;;
+}
+
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>此时，当登录成功一次后，下次再打开登录页面，即<code>login.php</code>会发现上面有登录名了</p>
+<h4 id="2-7-cookie-2-">2.7 cookie案例2：保持登录状态</h4>
+<h5 id="2-7-1-">2.7.1 搭建登录界面</h5>
+<p>新建  <code>login.html</code>文件，代码如下：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+
+    &lt;style&gt;
+        form{
+            width: 180px;
+            margin: 100px auto;
+            font-size: 12px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 提交到check.php页面 --&gt;
+    &lt;form action=&quot;check.php&quot; method=&quot;post&quot;&gt;
+
+        &lt;input type=&quot;text&quot; placeholder=&quot;请输入账号&quot; name=&#39;username&#39;&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;请输入密码&quot; name=&#39;pwd&#39;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="2-7-2-">2.7.2 验证账号密码是否正确</h5>
+<p>在登录界面可知，用户登录后，会提交到 <code>check.php</code>页面，因此新建  <code>check.php</code>文件，在此做账号密码验证</p>
+<pre><code class="lang-php">&lt;?php
+
+   //判断是否有提交账号和密码数据过来
+   if(isset($_POST[&#39;username&#39;]) &amp;&amp; isset($_POST[&#39;pwd&#39;])){
+
+       //取出账号和密码
+       $username = $_POST[&#39;username&#39;];
+       $pwd = $_POST[&#39;pwd&#39;];
+
+       //打开数据库
+       $link = mysqli_connect(&#39;localhost&#39;,&#39;root&#39;,&#39;root&#39;,&#39;test&#39;);
+
+       //准备sql查询语句
+       $sql = &quot;select *from user where username=&#39;$username&#39; and password=&#39;$pwd&#39;&quot;;
+
+       //查询结果
+       $result = mysqli_query($link,$sql);
+
+       //转换成数组
+       $data = mysqli_fetch_all($result,1);
+
+       //关闭数据库连接
+       mysqli_close($link);
+
+       //如果结果不为0，证明有此账号密码，则登录成功，给它显示网页
+       if(count($data) &gt; 0){
+               //去主页面
+            header(&#39;location:main.php&#39;);
+       }else{
+           //账号密码错误，去登录页
+            header(&#39;location:login.html&#39;);
+       }
+    }
+?&gt;
+</code></pre>
+<p>再新建<code>main.php</code>，代码如下</p>
+<pre><code class="lang-php+HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;欢迎登录：某某！您的余额为：0元&lt;/h2&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eos deleniti perspiciatis ea enim ipsa nam ipsam aliquid facere obcaecati rerum, iusto atque error beatae excepturi tempore alias natus! Vel?&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="2-7-3-">2.7.3 存在的问题：</h5>
+<ol>
+<li>在  <code>main.php</code>里，希望把登录用户的信息展示出来，例如，展示他的用户名和余额。</li>
+</ol>
+<ol>
+<li>用户不登录，直接访问 <code>main.php</code>这个页面，也能直接出这个界面。</li>
+</ol>
+<p>解决思路：我们在账号密码验证正确后，把用户名、余额存到cookie里，然后在main.php里判断是否有这个cookie，如果有，证明登录成功可以访问，把cookie的内容取出来显示到界面上。如果没有，就调回login.html。</p>
+<h5 id="2-7-3-cookie">2.7.3 把登录信息存到cookie</h5>
+<p>修改  <code>check.php</code> 中 <code>if( count($data) &gt; 0 )</code> 部分，代码如下：</p>
+<pre><code class="lang-php">//信息存到cookie
+setcookie(&#39;name&#39;,$username);
+setcookie(&#39;money&#39;,$data[0][&#39;money&#39;]);
+
+header(&#39;location:main.php&#39;);
+</code></pre>
+<p>然后修改  <code>main.php</code>的代码，让它有cookie才能访问，没有调回登录，代码如下：</p>
+<pre><code class="lang-php">&lt;?php
+    //取cookie
+    $username = $_COOKIE[&#39;name&#39;];
+    $money = $_COOKIE[&#39;money&#39;];
+    //判断是否存在cookie
+    if(isset($username) &amp;&amp; isset($money)):
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;欢迎登录：&lt;?php echo $username; ?&gt;您的余额为：&lt;?php echo $money; ?&gt;元&lt;/h2&gt;
+
+    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit eos deleniti perspiciatis ea enim ipsa nam ipsam aliquid facere obcaecati rerum, iusto atque error beatae excepturi tempore alias natus! Vel?&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;?php
+    else:
+        //如果不存在cookie，证明没登录过，返回登录页
+        header(&#39;location:login.html&#39;);
+    endif;
+?&gt;
+</code></pre>
+<p>至此，我们完成了登录状态保持。</p>
+<h3 id="3-session">3. session</h3>
+<blockquote>
+<p>回忆：cookie是存在哪？</p>
+</blockquote>
+<h4 id="3-1-cookie-">3.1 cookie可以被伪造</h4>
+<p>​    由于cookie是存在于浏览器端的特性，所以cookie是可以被用户自由修改、伪造。</p>
+<p>例：我们做的  <code>保持登录状态</code> 案例。我们保存的用户信息都一目了然的存在于浏览器。很不安全，如图：</p>
+<p><img src="images/1522984061061.png" alt="52298406106"></p>
+<p>此时，我只要在电脑上随意修改，例如修改金额为<code>999999</code>，那么打开网站时也是<code>999999</code>。并且，其他人只要知道了你的用户名，那么也可以自行添加cookie，骗过服务器，直接访问<code>main.php</code>。（具体操作见课堂演示）</p>
+<h4 id="3-2-session-">3.2 session基本使用</h4>
+<blockquote>
+<p>思考：我们把cookie要存的那些数据，存在服务端是不是就更安全了呢？</p>
+</blockquote>
+<p>如果要把原本cookie可以存的东西存在服务端，有一种技术叫session即可实现。</p>
+<h5 id="3-2-1-session-">3.2.1 session介绍</h5>
+<p>​    session可以理解为是服务器上的一个保险柜，把所有数据都保存在服务器的保险柜里，只给浏览器一把钥匙用来访问这些数据。</p>
+<p>如图：</p>
+<p><img src="images/1522999966404.png" alt="52299996640"></p>
+<p>由图，我们可知：数据都是存在服务器端，而浏览器端只存一把 <code>钥匙</code>。因为要把 <code>钥匙</code>给浏览器存起来，存钥匙的技术还是cookie，所以说session技术是基于cookie的。</p>
+<h5 id="3-2-1-session-">3.2.1 新增session语法：</h5>
+<pre><code class="lang-php">//一定要先调用此函数开启session
+session_start();
+//通过超全局变量添加一条session记录
+$_SESSION[&#39;名&#39;]= 值;
+</code></pre>
+<p>之前我们用cookie值一般都是给字符串，但是在session中，除了可以给基本类型，还可以给复杂数据类型</p>
+<p>例：</p>
+<pre><code class="lang-php">//一定要先调用此函数开启session
+session_start();
+//保存基本类型
+$_SESSION[&#39;name&#39;] = &#39;jack&#39;;
+//保存复杂数据类型
+$_SESSION[&#39;books&#39;] = array(&#39;C语言从入门到入土&#39;,&#39;MySQL优化之道：从删库到跑路&#39;);
+</code></pre>
+<p>注意：新增时一定要先使用   <code>session_start();</code> 开启session</p>
+<h5 id="3-2-2-session-">3.2.2 读取session语法</h5>
+<pre><code class="lang-php">//一定要先调用此函数开启session
+session_start();
+//直接通过超全局变量可以取到session记录
+var_dump($_SESSION);
+//单独取出某条$_SESSION记录
+echo $_SESSION[&#39;name&#39;];
+</code></pre>
+<h5 id="3-2-3-session-">3.2.3 修改session语法</h5>
+<p>直接对已经存在的session重新赋值就是修改</p>
+<pre><code class="lang-php">// 开启session
+session_start();
+//修改
+$_SESSION[&#39;name&#39;] = &#39;rose&#39;;
+</code></pre>
+<h5 id="3-2-4-session-">3.2.4 删除session语法</h5>
+<p>使用 <code>unset</code>函数可以删除session</p>
+<pre><code class="lang-php">// 开启session
+session_start();
+
+// 删除保存的session
+// 删除变量的值
+unset($_SESSION[&#39;name&#39;]);
+</code></pre>
+<blockquote>
+<p> 总结：只要是想操作session，请记得都要开启session</p>
+</blockquote>
+<h5 id="3-2-5-session-">3.2.5 session关闭浏览器就过期</h5>
+
+<h3 id="4-http-">4. 延伸阅读  -----《图解http》</h3>
+<p>注：按住ctrl键 + 鼠标左键可以打开</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

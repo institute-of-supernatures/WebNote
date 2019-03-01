@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        浏览器默认就有一个拖拽的行为：
+                就是打开被拖进来的文件
+
+     -->
+
+    <style>
+        html,body{
+            height:100%;
+        }
+        body{
+            border:5px dashed black;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>拖拽文件到虚线内</h1>
+</body>
+</html>
+
+<script>
+
+    //这个事件只是为了让ondrop能够触发
+    document.body.ondragover = function(e){
+
+        e = e || window.event;
+        e.preventDefault();
+    }
+
+    // 拖拽到body的范围内并且松手才触发的事件
+    // 这里它默认有ondrop实现，相当于它有默认的事件行为
+    // 所以我们要先阻止这个默认实现
+    document.body.ondrop = function(e){
+
+        e = e || window.event;
+        e.preventDefault();
+
+        // console.log('...');
+        
+        //拖进来的图片在事件对象的dataTransfer的files属性里
+        // console.log(e.dataTransfer.files[0]);
+
+        //转为临时路径
+        var url = URL.createObjectURL(e.dataTransfer.files[0]);
+
+
+        //拿到拖进来的图片
+        //作为body的背景图片就能预览了
+        document.body.style.background = "url(" + url+ ")";
+
+        //发一个ajax请求，把文件发送给服务器 FormData append
+        
+    }    
+</script>

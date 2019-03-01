@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 120px;
+            height: 180px;
+            border: 1px solid skyblue;
+            outline: none;
+            overflow-y: auto;
+        }
+        button {
+            width: 50px;
+            height: 30px;
+            outline: none;
+            background: skyblue;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <select name="" id="left" multiple>
+        <option value="">Web</option>
+        <option value="">Java</option>
+        <option value="">Node.js</option>
+        <option value="">C++</option>
+        <option value="">PHP</option>
+        <option value="">UI</option>
+        <option value="">IOS</option>
+    </select>
+    <select name="" id="right" multiple>
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+        <!--<option value=""></option>-->
+    </select>
+    <br/><br/>
+    <button id="btn1">&lt;&lt;</button>
+    <button id="btn2">&lt;</button>
+    <button id="btn3">&gt;</button>
+    <button id="btn4">&gt;&gt;</button>
+</div>
+
+<script src=" ./../common.js "></script>
+<script>
+    var left = id('left');
+    var right = id('right');
+    var btn1 = id('btn1');
+    var btn2 = id('btn2');
+    var btn3 = id('btn3');
+    var btn4 = id('btn4');
+
+    // 全部右移
+    btn4.onclick = function () {
+        // console.log ( left.children );
+        moveAll(left,right);
+    }
+    // 全部左移
+    btn1.onclick = function () {
+        // console.log ( right.children );
+        moveAll(right,left);
+    }
+
+    // 选中右移
+    btn3.onclick = function () {
+        // console.log ( left.children );
+        moveSelect(left,right);
+    }
+    // 选中左移
+    btn2.onclick = function () {
+        // console.log ( right.children );
+       moveSelect(right,left);
+    }
+
+    /**
+     * 全部移动
+     * @param from：要移出的元素
+     * @param to：要移入的元素
+     */
+    function moveAll( from,to){
+        for ( var i = 0 ; i < from.children.length ; i ++ ) {
+            to.appendChild(from.children[i])
+            i--;
+        }
+    }
+
+    /**
+     * 选中移动
+     * @param from：要移出的元素
+     * @param to：要移入的元素
+     */
+    function moveSelect(from,to){
+        for ( var i = 0 ; i < from.children.length ; i ++ ) {
+            if ( from.children[ i ].selected ) {
+                to.appendChild(from.children[i]);
+                i--;
+            }
+        }
+    }
+</script>
+</body>
+</html>

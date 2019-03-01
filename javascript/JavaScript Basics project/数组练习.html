@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组联系</title>
+</head>
+<body>
+<script>
+    // 练习：（1）排序对数组进行从大到小排序 （2）翻转数组  ( 3 ) 数组首尾元素的值互换    ( 4 ) 斐波那契阿数列
+
+    // ( 1 ) 排序对数组进行从大到小排序
+
+    // var arr = [90 , 88 , 20 , 100 , 5];
+    // for ( var i = arr.length - 1 ; i >= 0 ; i-- ){
+    //     for ( var j = arr.length - 1 ; j >= 0 ; j-- ){
+    //         if ( arr[ j ] > arr[ j - 1 ] ) {
+    //             var temp = arr[ j ];
+    //             arr[ j ] = arr[ j - 1 ];
+    //             arr[ j - 1 ] = temp;
+    //         }
+    //     }
+    // }
+    // console.log ( arr );
+
+    // // 数组API排序
+    // // 从大到小
+    // var newArr = arr.sort(function ( a, b ) {
+    //     return a - b ;
+    // });
+    // console.log ( newArr );
+    // // 从小到大
+    // console.log ( newArr.reverse () );
+
+
+    // ( 2 ) 翻转数组
+
+    // 翻转法
+    // var newArr = [];
+    // for ( var i = arr.length - 1 ; i >= 0 ; i-- ){
+    //     console.log ( arr[ i ] );
+    //     newArr[newArr.length] = arr[i];
+    // }
+    // console.log ( newArr );
+
+    // 交换法 ：（1）不需要生成新数组     （2）不需要全部遍历
+    //     //a. 遍历数组的一半
+    // for ( var i = 0 ; i < arr.length / 2 ; i ++ ) {
+    //     //b. 让下标为 i 的元素与下标为 arr.length-1-i 的元素交换位置
+    //     var temp = arr[ i ];
+    //     arr[ i ] = arr[ arr.length - 1 - i ];
+    //     arr[ arr.length - 1 - i ] = temp;
+    // }
+    // console.log ( arr );
+
+    // // 数组API翻转数组
+    // var newArr = arr.reverse();
+    // console.log ( newArr );
+
+    // ( 3 ) 数组首尾元素的值互换
+    // for(var i = 0;i<arr.length/2;i++){
+    //     console.log ( arr[ i ] );
+    //     //交换首尾元素的位置
+    //     //交换arr[i]和arr[arr.leth-1 - i]这两个元素的值
+    //     var temp = arr[i];
+    //     arr[i] = arr[arr.length-1 - i];
+    //     arr[arr.length-1 - i] = temp;
+    // }
+    // console.log ( arr );
+
+    // // ( 4 )斐波那契阿数列  :  1 , 1 , 2 , 3 , 5 , 8 , 13 , 21 , 34 , 55 .....   求第十位数字是几？
+    // //特点:从第三个数字开始，每一个数字是前两个数字的和
+    // var fibNum = [1,1];
+    //
+    // for(var i = 2;i<10;i++){//i=2 是因为从下标为2的数字开始 才是  前面两个元素的和
+    //     fibNum[i] = fibNum[i-1] + fibNum[i-2];
+    // };
+    // console.log ( fibNum );
+    // console.log ( fibNum[ fibNum.length - 1 ] );//数组中最后一个元素
+
+</script>
+</body>
+</html>

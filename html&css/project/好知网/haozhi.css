@@ -1,0 +1,457 @@
+/* 初始化 */
+
+body,
+input,
+img,
+div,
+ul,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+strong,
+ins,
+del,
+img,
+em,
+i {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    border: 0;
+    outline: none;
+}
+
+img {
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+body {
+    font: 12px/100% "微软雅黑";
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+}
+.clearfix::after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+.w {
+    width: 1140px;
+    margin: 0 auto;
+}
+/* 页面顶部 */
+.topBar {
+    height: 80px;
+    line-height: 80px;
+    overflow: hidden;
+}
+.logo {
+    float: left;
+}
+.logo a {
+    display: block;
+    width: 90px;
+    height: 55px;
+    background: url("./images/logo.png");
+    margin-top: 17px;
+}
+.topNav {
+    height: 80px;
+    float: left;
+    line-height: 80px;
+    margin-left: 50px;
+}
+.topBar .topNav li {
+    float: left;
+    margin-right: 52px;
+}
+.topBar .topNav li:nth-child(3) {
+    margin-left: 14px;
+}
+.topNav li a {
+    font-size: 16px;
+    color: #686767;
+}
+.login {
+    float: right;
+}
+.login li {
+    float: left;
+    margin-right: 22px;
+}
+.login li a {
+    font-size: 14px;
+    color: #15c388;
+    display: block;
+}
+.login a i {
+    display: block;
+    float: left;
+    width: 11px;
+    height: 19px;
+    margin-top: 28px;
+    margin-right: 2px;
+    background: url("./images/1243.png");
+}
+.topmain {
+    height: 420px;
+    background: url("./images/11.jpg") center center;
+}
+.topmain .main_box {
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+}
+.topmain .main_box .box {
+    width: 252px;
+    height: 146px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    border-radius: 15px;
+    top: 105px;
+    right: 0;
+}
+.main_box .box .now {
+    display: block;
+    height: 20px;
+    width: 46px;
+    text-align: right;
+    line-height: 20px;
+    border-left: 5px solid #fc7c52;
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    font-size: 14px;
+    color: #fff;
+}
+.main_box .box .num {
+    font-size: 48px;
+    line-height: 48px;
+    position: absolute;
+    top: 60px;
+    left: 23px;
+    font-weight: bold;
+    color: #fff;
+}
+.main_box .box .stu {
+    display: block;
+    width: 58px;
+    height: 34px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    top: 68px;
+    right: 32px;                                                                
+}
+.topmain .main_box .botton{
+    width: 252px;
+    height: 48px;
+    position: absolute;
+    background-color: #fc7c52;
+    border-radius: 24px;
+    top: 267px;
+    right: 0;
+}
+.main_box .botton a {
+    display: block;
+    width: 252px;
+    height: 48px;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+    font-size: 18px;
+}
+/* 热门课程 */
+.hot {
+    height: 374px;
+    padding-top: 62px;
+    margin-bottom: 81px;
+}
+.course {
+    float: left;
+    margin-bottom: 37px;
+}
+.course li {
+    float: left;
+}
+li span {
+    font-size: 24px;
+    margin: 0 18px;
+    line-height: 24px;
+    color: #5e625e;
+}
+li.hr {
+    height: 1px;
+    width: 504px;
+    margin-top: 12px;
+    background-color: #efefef;
+}
+
+.video {
+    height: 315px;
+    width: 560px;
+    float: left;
+}
+.video a {
+    display: block;
+    height: 315px;
+    width: 560px;
+    position: relative;
+}
+.video a img {
+    height: 315px;
+    width: 560px;
+}
+.video a .jieshao {
+    width: 294px;
+    height: 72px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 74px;
+    left: 50%;
+    margin-left: -130px;
+    text-align: center;
+    padding-top: 30px;
+}
+.jieshao span {
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.video a>span.student {
+    font-size: 18px;
+    color: #fff;
+    line-height: 18px;
+    position: absolute;
+    top: 210px;
+    left: 220px;
+}
+.lr {
+    float: right;
+    margin-right: 0;
+}
+.recommend {
+    height: 374px;
+    margin-bottom: 81px;
+}
+.class li {
+    float: left;
+}
+.class {
+    float: left;
+    padding-bottom: 38px;
+}
+.jiaru li {
+    position: relative;
+    float: left;
+    margin-right: 26px;
+    margin-bottom:81px;
+}
+.jiaru img.banji {
+    width: 263px;
+    height: 149px;
+}
+.jiaru .liji {
+    width: 263px;
+    height: 168px;
+    border: 1px solid #f0f0f0;
+}
+.jiaru .liji span.name {
+    display: block;
+    font-size: 13px;
+    line-height: 14px;
+    color: #444343;
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+.jiaru .liji span.xinxi {
+    display: block;
+    width: 230px;
+    font-size: 12px;
+    line-height: 19px;
+    color: #656565;
+}
+.jiaru .liji a {
+    display: block;
+    width: 235px;
+    height: 38px;
+    background-color: #15c388;
+    text-align: center;
+    line-height: 38px;
+    margin: 0 auto;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    margin-left: -118px;
+}
+.jiaru li img.left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.jiaru li:last-child {
+    margin-right: 0;
+}
+.approve .expert {
+    float: left;
+    margin-bottom: 38px;
+}
+.approve .expert li {
+    float: left;
+}
+.approve .people {
+    height: 244px;
+    width: 100%;
+}
+.approve .people li {
+    float: left;
+    width: 358px;
+    height: 144px;
+    border: 1px solid pink;
+    position: relative;
+    margin-right: 30px;
+}
+.approve .people li:last-child {
+    margin-right: 0;
+}
+.people li i {
+    display: block;
+    width: 104px;
+    height: 104px;
+    border-radius: 52px;
+    background: url("./images/7.png") center center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.font {
+    position: absolute;
+    top: 34px;
+    left: 134px;
+}
+.font span.text_tit {
+    font-size: 14px;
+    line-height: 14px;
+    color: #15c388;
+}
+.font a {
+    width: 66px;
+    height: 34px;
+    display: block;
+    font-size: 14px;
+    background-color: #ff953a;
+    color: #fff;
+    line-height: 34px;
+    padding-left: 30px;
+    border-radius: 17px;
+    margin: 10px 0;
+    margin-left: 15px;
+}
+.font span.text_font {
+    font-size: 12px;
+    line-height: 12px;
+}
+.people li:nth-child(2) i {
+    background: url("./images/111.png");
+}
+.people li:nth-child(3) i {
+    background: url("./images/14.jpg");
+}
+.ruzhu {
+    margin-top: 20px;
+    float: right;
+}
+.ruzhu a {
+    display: block;
+    float: left;
+    color: #999;
+    font-size: 12px;
+    line-height: 25px;
+    padding-left: 14px;
+    width: 70px;
+    height: 25px;
+    border-radius: 42px;
+    border: 1px solid #999999;
+    margin-right: 10px;
+}
+/* 页尾 */
+.footer {
+    height: 201px;
+    background-color: #515151;
+    margin-top: 100px;
+}
+.footer .foot_top {
+    width: 1290px;
+    height: 127px;
+    margin: 0 auto;
+    border-bottom: 1px solid #5f5f5f;
+    position: relative;
+}
+.foot_top .foot_box img {
+    position: absolute;
+    top: 39px;
+    left: 134px;
+}
+.list {
+    position: absolute;
+    top: 50px;
+    left: 490px;
+}
+.list span a{
+    font-size: 14px;
+    color: #fff;
+}
+.list p {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 20px;
+}
+.foot_bottom {
+    position: absolute;
+    left: 170px;
+}
+.foot_bottom p {
+    font-size: 12px;
+    color: #999999;
+    margin-top: 10px;
+}
+.foot_bottom a {
+    color: #999999;
+}

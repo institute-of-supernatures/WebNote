@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #clock{
+            width: 600px;
+            height: 600px;
+            margin: 100px auto;
+            position: relative;
+            background: url("./images/clock.jpg") center center;
+        }
+        #h{
+            height: 600px;
+            width: 30px;
+            background: url("./images/hour.png");
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -15px;
+        }
+        #m{
+            height: 600px;
+            width: 30px;
+            background: url("./images/minute.png");
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -15px;
+        }
+        #s{
+            height: 600px;
+            width: 30px;
+            background: url("./images/second.png");
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -15px;
+        }
+    </style>
+</head>
+<body>
+<div id="clock">
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+</div>
+<script>
+    /*
+    1秒 = 360/60 = 6度    s秒 =  s * 6
+    1分 = 360/60 = 6度    m分 = （m + s /60） * 6
+    1小时 = 360/12 = 30度 h小时 = （h + m / 60  + s / 3600） * 30
+     */
+    var hDiv = document.getElementById('h');
+    var mDiv = document.getElementById('m');
+    var sDiv = document.getElementById('s');
+    clock();
+    setInterval(function () {
+        clock();
+    },1000);
+
+    function clock () {
+        // 获取当前时间的时分秒
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+
+        // 根据时分秒计算角度
+        var sDeg = s * 6;
+        var mDeg = ( m + s/60 ) * 6;
+        var hDeg = ( h + m/60 + s/3600 ) * 30;
+
+        hDiv.style.transform = 'rotate(' + hDeg + 'deg )';
+        mDiv.style.transform = 'rotate(' + mDeg + 'deg )';
+        sDiv.style.transform = 'rotate(' + sDeg + 'deg )';
+    }
+</script>
+</body>
+</html>

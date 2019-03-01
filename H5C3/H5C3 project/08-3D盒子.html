@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /* 
+            技巧：如果发现视觉效果不太对，那么就把视点往上一级父级加
+        */
+
+        body {
+            perspective: 1200px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid #000; */
+            margin: 200px auto;
+            position: relative;
+
+            transition: all 10s;
+
+
+            /* 浏览器默认没有开3D效果 */
+            transform-style: preserve-3d;
+
+            animation: turn infinite 20s;
+        }
+
+        li {
+
+            width: 100%;
+            height: 100%;
+            /* background-color: #f00; */
+            position: absolute;
+            /* background: url(img/girl1.jpg) no-repeat center/cover; */
+
+            /* opacity: .5; */
+        }
+
+        span {
+            display: block;
+            background-color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        li:nth-child(1) {
+
+            background-color: red;
+            left: -200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li:nth-child(2) {
+            background-color: #0f0;
+            top: -200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        li:nth-child(3) {
+            background-color: #00f;
+            right: -200px;
+        }
+
+        li:nth-child(4) {
+            background-color: hotpink;
+            bottom: -200px;
+        }
+
+        li:nth-child(5) {
+            background-color: purple;
+        }
+
+        li:nth-child(6) {
+
+            background-color: yellow;
+        }
+
+        li:nth-child(1) {
+
+            /* 设置旋转的固定点 */
+            transform-origin: right;
+            transform: rotateY(90deg);
+        }
+
+        li:nth-child(2) {
+
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+
+        li:nth-child(3) {
+
+            transform-origin: left;
+            transform: rotateY(-90deg);
+            display: flex;
+            justify-content: space-around;
+        }
+
+        li:nth-child(3) soan:nth-child(1) {
+            margin-top: 10px;
+        }
+
+        li:nth-child(3) span:nth-child(2) {
+            align-self: center;
+        }
+
+        li:nth-child(3) span:nth-child(3) {
+            align-self: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .last {
+            display: flex;
+        }
+
+        .last>div {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        li:nth-child(4) {
+
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        li:nth-child(6) {
+
+            transform: translateZ(200px);
+        }
+
+
+        /* ul:hover {
+
+            transform: rotateX(1000deg) rotateY(1000deg);
+        } */
+
+        @keyframes turn{
+
+            from{}
+            to{
+
+                transform: rotateX(2700deg) rotateY(2700deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+        </li>
+        <li>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li class="last">
+            <div><span></span><span></span></div>
+            <div><span></span><span></span></div>
+        </li>
+        <li class="last">
+            <div><span></span><span></span></div>
+            <div><span></span></div>
+            <div><span></span><span></span></div>
+        </li>
+        <li class="last">
+            <div><span></span>
+                <span></span>
+                <span></span></div>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>

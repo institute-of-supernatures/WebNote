@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main" style="width:600px; height: 400px;"></div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./echarts.js"></script>
+    <script>
+        // 初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        //设置图标配置项
+        myChart.setOption({
+            title: {
+                text: 'ECharts 异步加载数据'
+            },
+            tooltip: {},
+            legend: {
+                data: ['访问量']
+            },
+            xAxis: {
+                data: []
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '访问量',
+                    type: 'bar',
+                    data: []
+                }
+            ]
+        })
+        //异步加载数据
+        // $.get('data.json').done(function (data) {			
+        // 	data = eval('('+data+')');
+        // })
+        // 打开loading动画
+        myChart.showLoading();
+        function bindData() {
+            setInterval(function () {
+                // 获取数据后隐藏动画
+                myChart.hideLoading();
+                // 异步加载数据
+                $.get({
+                    url: './data.php',
+                    dataType: 'json',
+                    success: function (obj) {
+                        myChart.setOption({
+                            xAxis: {
+                                data: obj.name
+                            },
+                            series: [
+                                {
+                                    //根据名字对应到相应的系列
+                                    name: "访问量",
+                                    data: obj.data
+                                }
+                            ]
+                        })
+                    }
+                });
+            }, 1000)
+        }
+        bindData();
+    </script>
+</body>
+
+</html>

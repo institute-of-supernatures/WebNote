@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画直线</title>
+    <style>
+        #can {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="can" width="600"  height="300"></canvas>
+<script>
+    // 画一个三角形 填充颜色
+    var can = document.getElementById('can');
+    var ctx = can.getContext('2d');
+    ctx.strokeStyle = "rgb(255,100,100,0.5)"; // 描边颜色
+    ctx.fillStyle = "skyblue"; // 填充颜色
+
+    ctx.moveTo(100,100);
+    ctx.lineTo(200,100);
+    ctx.lineTo(200,300);
+    ctx.closePath(); // 将lineTo最后一个点和最近moveTo点连起来
+    ctx.stroke(); // 描边
+    ctx.fill(); // 填充 会自动执行一遍closePath
+
+    // 开启新的路径
+    ctx.beginPath(); // 创建一个新的玻璃纸
+    // 画一条线
+    ctx.moveTo(300,100);
+    ctx.lineTo(300,400);
+    ctx.stroke(); // 将玻璃纸上画的画印刷在canvas上
+</script>
+</body>
+</html>

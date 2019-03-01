@@ -1,0 +1,392 @@
+/* 初始化 */
+body,
+input,
+span,
+div,
+img,
+ul,
+li,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+ins,
+em,
+del,
+i {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+input {
+    border: 0;
+    outline: 0;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+i {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+.clearfix::before,
+.clerafix::after {
+    content: "";
+    display: block;
+}
+.clearfix::after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+body {
+    font: 12px/100% "微软雅黑";
+}
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 顶部通栏 */
+.topBar {
+    height: 770px;
+    background: url("./imgs/banner.jpg");
+}
+.navBar {
+    height: 58px;
+    line-height: 58px;
+    margin-bottom: 110px;
+}
+.logo {
+    float: left;
+    margin-top: 22px;
+}
+.logo a {
+    display: block;
+    width: 110px;
+    height: 25px;
+    background: url("./imgs/logo.jpg");
+}
+
+.navBar {
+    float: right;
+}
+.navBar li {
+    float: left;
+    margin-right: 55px;
+    font-size: 16px;
+}
+.navBar li:hover a {
+    color: #b10218;
+}
+
+.banner {
+    text-align: center;
+    overflow: hidden;
+}
+.banner .p1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 26px;
+}
+.banner .p2 {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 35px;
+}
+.banner .search {
+    width: 650px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    line-height: 50px;
+}
+.banner a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px 0 0 25px;
+    float: left;
+}
+.search .icon-icon- {
+    font-size: 24px;
+    position: absolute;
+    left: 18px;
+}
+.banner input {
+    width: 595px;
+    height: 50px;
+    border-radius: 0 25px 25px 0;
+    padding-left: 5px;
+    float: left;
+}
+/* 服务栏 */
+.service {
+    background-color: #f6f6f6;
+    height: 1037px;
+}
+.main {
+    padding-top: 98px;
+    text-align: center;
+}
+.main .p1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    padding-bottom: 97px;
+}
+.ser {
+    height: 600px;
+}
+.ser a {
+    display: block;
+    float: left;
+    width: 294px;
+    height: 320px;
+    background-color: #fff;
+    position: relative;
+    margin-right: 8px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.ser a i {
+    display: block;
+    width: 100px;
+    height: 70px;
+    background: url("./imgs/精灵图.jpg");
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 42px;
+}
+.ser a .p1 {
+    font-size: 22px;
+    line-height: 22px;
+    color: #333;
+    margin-top: 136px;
+}
+.ser a .p2 {
+    display: block;
+    margin-top: 66px;
+    font-size: 16px;
+    width: 294px;
+    color: #666;
+    line-height: 20px;
+}
+.ser li:nth-child(4n) a {
+    margin-right: 0;
+    text-align: center;
+}
+.ser li:nth-child(2) i {
+    background-position-y: -140px; 
+}
+.ser li:nth-child(3) i {
+    background-position-y: -70px; 
+}
+.ser li:nth-child(4) i {
+    background-position-y: -280px; 
+}
+.ser li:nth-child(5) i {
+    background-position-y: -420px; 
+}
+.ser li:nth-child(6) i {
+    background-position-y: -490px; 
+}
+.ser li:nth-child(7) i {
+    background-position-y: -210px; 
+}
+.ser li:nth-child(8) i {
+    background-position-y: -350px; 
+}
+/* 热门主题 */
+.remen {
+    margin-top: 75px;
+}
+.reMain {
+    
+}
+.reMain .p1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 68px;
+    text-align: center;
+}
+.reMain .jiandan {
+    height: 375px;
+    border-top: 1px solid #ededed;
+    padding-top: 68px;
+}
+.left {
+    width: 328px;
+    float: left;
+}
+.left .p2 {
+    font-size: 29px;
+    line-height: 39px;
+    margin-bottom: 42px;
+}
+.left .p3 {
+    font-size: 19px;
+    line-height: 34px;
+    margin-bottom: 28px;
+}
+.left a {
+    font-size: 18px;
+}
+.right img {
+    width: 550px;
+    height: 234px;
+    float: left;
+    margin-left: 294px;
+}
+/* 保障 */
+.baozhang {
+    height: 168px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    text-align: center;
+}
+.left-font {
+    float: left;
+    height: 116px;
+    width: 599px;
+    border-right: 1px solid #ededed;
+    margin-top: 26px;
+}
+.p1 {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.p2 {
+    font-size: 16px;
+    color: #a8a49f;
+    line-height: 16px;
+    margin-bottom: 16px;
+}
+a {
+    font-size: 16px;
+    line-height: 16px;
+}
+.right-font {
+    float: right;
+    height: 116px;
+    width: 600px;
+    margin-top: 26px;
+}
+/* 页尾 */
+.footer {
+    height: 270px;
+    border-bottom: 1px solid #ededed;
+    position: relative;
+}
+.footer dt{
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 18px;
+}
+.footer dl a{
+    font-size: 12px;
+    line-height: 12px;
+}
+.footer .jixing {
+    margin-top: 60px;
+    margin-right: 130px;
+    float: left;
+}
+.footer .kefu {
+    width: 173px;
+    height: 51px;
+    border-radius: 25px;
+    position: absolute;
+    top: 55px;
+    right: 0;
+}
+.footer .kefu a{
+    display: block;
+    width: 143px;
+    height: 51px;
+    background-color: #666666;
+    color: #fff;
+    line-height: 51px;
+    text-align: center;
+    border-radius: 25px;
+    padding-left: 30px;
+}
+.kefu .icon-chaoaiwawa {
+    font-size: 32px;
+    color: #fff;
+    line-height: 51px;
+    position: absolute;
+    top: 0px;
+    left: 32px;
+}
+.kefu span {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    font-size: 20px;
+}
+.kefu .p2 {
+    position: absolute;
+    right: 0;
+    top: 120px;
+    color: #898989;
+    font-size: 12px;
+}
+/* 尾部通栏 */
+.weibu {
+    height: 79px;
+    padding-top: 30px;
+}
+.weibu p {
+    color: #989ab6;
+    float: left;
+}
+.weibu a .right {
+    float: right;
+    font-size: 12px;
+}
+.lianxi {
+    float: left;
+    margin-left: 480px;
+}
+
+.lianxi i {
+    margin-right: 15px;
+    color: #999999;
+}
+.lianxi .pq {
+    margin-right: 20px;
+}
+.lianxi .xian {
+    border-left: 1px solid #999;
+}

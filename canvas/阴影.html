@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById('can').getContext('2d');
+        /*
+        shadowOffsetX / shadowOffsetY 设置阴影在X和Y轴的延伸距离
+            负数表示往上和左延伸, 正数表示往下和右延伸 默认为0
+        shadowBlur 设置阴影的模糊程度  默认为0
+        shadowColor 设置阴影的默认颜色 是标准的CSS颜色 默认是全透明的黑色
+        */
+        function draw(){
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 2;
+            ctx.shadowColor = "skyblue";
+
+            ctx.font = "20px 微软雅黑";
+            ctx.fillStyle = "black";
+            ctx.fillText("天生我才必有用",5,30);
+        }
+        draw();
+        // save() / stroke()
+        // save() 方法用来保存ctx的相关设置
+        // restore() 方法用来修复ctx工具的样式
+    </script>
+</body>
+</html>

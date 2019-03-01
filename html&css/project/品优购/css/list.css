@@ -1,0 +1,169 @@
+/* 列表页面专用css */
+
+.sk {
+    height: 32px;
+    width: 72px;
+    border-left: 1px solid #b21a1c;
+    text-align: right;
+    line-height: 32px;
+    position: absolute;
+    top: 40px;
+    left: 186px;
+}
+
+.nav .sk_list {
+    float: left;
+    margin-left: 28px;
+}
+
+.nav .sk_list li {
+    float: left;
+    font-size: 16px;
+    line-height: 45px;
+    margin-right: 56px;
+    font-weight: bold;
+}
+
+.nav .sk_con {
+    float: left;
+    margin-right: 20px;
+}
+
+.nav .sk_con li {
+    float: left;
+    font-size: 14px;
+    line-height: 45px;
+    margin-right: 44px;
+}
+
+.nav .sk_con li:nth-child(2) a {
+    color: #b21a1c;
+}
+
+.nav .sk_con li:hover a {
+    color: #b21a1c;
+}
+
+.sk_container {
+    /* background-color: pink; */
+}
+
+.sk_container .sk_bd {
+    padding-top: 25px;
+}
+
+.sk_container .sk_bd ul {
+    width: 1300px;
+}
+
+.sk_container .sk_bd li {
+    float: left;
+    width: 290px;
+    height: 460px;
+    background-color: #fff;
+    margin-right: 13px;
+    margin-bottom: 12px;
+}
+
+.sk_bd li a.detail {
+    display: block;
+    width: 288px;
+    height: 409px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+}
+
+.sk_bd li a.detail:hover {
+    border-color: #ff0000;
+}
+
+.sk_bd li a.rush {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    width: 290px;
+    height: 50px;
+    background-color: #ff0000;
+}
+
+.sk_goods .seckill_mod_goods_img {
+    display: block;
+    margin: 0 auto;
+}
+
+.sk_goods .sk_goods_title {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "宋体";
+    padding: 0 10px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.sk_goods .price {
+    margin-top: 12px;
+}
+
+.sk_goods .price .now_pri {
+    font-size: 20px;
+    line-height: 20px;
+    color: #ff0000;
+    font-weight: bold;
+    float: left;
+    margin-left: 12px;
+}
+
+.sk_goods .price i {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.sk_goods .price .old_pri {
+    font-size: 14px;
+    color: #666;
+    line-height: 14px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.sk_goods_progress {
+    padding-left: 12px;
+    margin-top: 10px;
+}
+
+.sk_goods .sk_goods_progress span {
+    float: left;
+}
+
+.sk_goods_progress span.num {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.sk_goods_progress span.sk_progress {
+    display: block;
+    width: 130px;
+    height: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.sk_goods_progress span.sk_progress .sk_inner {
+    height: 10px;
+    width: 87%;
+    background-color: #ff0000;
+}
+
+.sk_goods_progress span.sk_count {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.sk_goods_progress span.sk_count i {
+    color: #ff0000;
+}

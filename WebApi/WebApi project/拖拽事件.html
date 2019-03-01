@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            height: 400px;
+            width: 200px;
+            background-color: skyblue;
+            position: absolute;
+            margin: 50px;
+        }
+        #top {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            /*position: absolute;*/
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="top"></div>
+</div>
+<script src=" ./../common.js "></script>
+<script>
+    /*
+    鼠标按下：onmousedown
+    鼠标抬起：onmouseup
+     */
+    var box = id('box');
+    var top = id('top');
+
+    top.onmousedown = function ( e ) {
+        e = e || window.event;
+        var x = getPagePoint(e).pageX - box.offsetLeft ;
+        var y = getPagePoint(e).pageY - box.offsetTop ;
+        box.onmousemove = function ( e ) {
+            e = e || window.event;
+            box.style.left =getPagePoint(e).pageX - x - 50+'px';
+            box.style.top = getPagePoint(e).pageY - y - 50+'px';
+        }
+        top.onmouseup = function () {
+            box.onmousemove = null;
+        }
+    }
+
+</script>
+</body>
+</html>

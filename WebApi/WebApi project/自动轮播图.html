@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+        .all {
+            width: 500px;
+            height: 250px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 250px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3000px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .all ol li.current {
+            background: skyblue;
+            border: 1px solid skyblue;
+            opacity: 0.5;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 28px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.5;
+            border: 1px solid #ccc;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="all">
+    <div class="screen">
+        <ul>
+            <li><img src="./images/01.jpg" width="500"></li>
+            <li><img src="./images/02.jpg" width="500"></li>
+            <li><img src="./images/03.jpg" width="500"></li>
+            <li><img src="./images/04.jpg" width="500"></li>
+            <li><img src="./images/05.jpg" width="500"></li>
+            <li><img src="./images/01.jpg" width="500"></li>
+        </ul>
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+    <div id="arr">
+        <span id="left" class="iconfont" style="border-radius: 0 20px 20px 0;">&#xf0343;</span>
+        <span id="right" class="iconfont" style="border-radius: 20px 0 0 20px;">&#xf0344;</span>
+    </div>
+</div>
+<script src=" ./common.js "></script>
+<script src=" ./animation.js "></script>
+<script>
+     /*
+     分析需求：（交互）
+        1、鼠标移入/移出大盒子：显示/隐藏 上一页，下一页
+        2、鼠标点击上一页，下一页：图片对应滚动
+        3、点击页码：图片对应滚动
+     思路分析：事件三要素
+         获取元素：
+         注册事件：
+         事件处理：
+     */
+     /*
+     1、获取页面元素，注册事件
+      */
+     // 最外面大盒子
+     var box = id("box");
+    // 轮播图可视区域
+     var screen = className('screen')[0];
+    // 轮播图列表ul
+     var ul = screen.children[0];
+    // 页码ol
+     var ol = screen.children[1];
+    // 上一页、下一页盒子
+     var arr = id('arr');
+    // 上一页
+     var left = id('left');
+    // 下一页
+     var right = id('right');
+
+     // 自动轮播
+    var timeID = setInterval(function (  ) {
+        nextPage();
+    },3000);
+
+    /*
+    2、注册事件
+     */
+    // 鼠标移入
+    box.onmouseover =function (  ) {
+        // 事件处理：显示上一页、下一页
+        arr.style.display = 'block';
+        // 停止手动轮播
+        clearInterval(timeID);
+    }
+
+    // 鼠标移出box
+     box.onmouseout =  function () {
+         //事件处理：隐藏上一页、下一页
+         arr.style.display = 'none';
+        // 重新开始自动轮播
+         timeID = setInterval(function (  ) {
+             nextPage();
+         },3000);
+     }
+
+     // 声明变量记录显示图片的下标
+     var index = 0;
+     function nextPage ( ) {
+         // 如果是最后一页则不滚动
+         if ( index == ul.children.length - 1 ) {
+             // 无限轮播，在最后一张图后面添加第一张图，在点击时瞬间跳转到第一张重新计数
+             // 原理：视觉欺骗（在最后面添加一张和第一张一样的图，在轮播到最后时，先在一瞬间跳转到第一张，然后正常跳转）
+             // 跳转到第一张
+             ul.style.left = '0px';
+             // 重新计数
+             index = 0;
+         }
+         index++;
+         // 开始滚动
+         animationMove(ul,- index * screen.offsetWidth);
+         // 排他思想修改页码样式
+         for ( var i = 0 ; i < ol.children.length ; i ++ ) {
+             if ( i == index ) {
+                 ol.children[i].className = 'current';
+             }else{
+                 ol.children[i].className = '';
+             }
+         }
+         // 如果是第6张，手动修改页码样式
+         if ( index == ul.children.length - 1 ) {
+             ol.children[0].className = 'current';
+         }
+     }
+
+    // 下一页
+     right.onclick = function () {
+         //事件处理
+        nextPage();
+     }
+
+    // 上一页
+     left.onclick = function () {
+         //事件处理
+         if ( index == 0 ) {
+             // 跳转到最后一张
+             ul.style.left = - (ul.children.length - 1 ) * screen.offsetWidth +'px';
+             // 重新计数：从最后一张开始（此时的最后一张时新添加的和第一张一模一样的图）
+             index = ul.children.length - 1 ;
+         }
+         index--;
+         animationMove(ul,- index * screen.offsetWidth);
+         // 排他思想修改页码样式
+         for ( var i = 0 ; i < ol.children.length ; i ++ ) {
+             if ( i == index ) {
+                 ol.children[i].className = 'current';
+             }else{
+                 ol.children[i].className = '';
+             }
+         }
+         // 如果是第6张，手动修改页码样式
+         if ( index == ul.children.length - 1 ) {
+             ol.children[0].className = 'current';
+         }
+     }
+
+    // 页码点击事件
+    //  ol.children.onclick = function () {
+         // 事件处理
+         for ( var i = 0 ; i < ol.children.length ; i ++ ) {
+             // 给每一个按钮添加自定义索引属性
+             ol.children[i].setAttribute('ymIndex',i);
+             // 注册点击事件
+             ol.children[i].onclick = function ( ){
+                 // 先跳转带第一张在进行滚动
+                 if ( index == 5 ){
+                     ul.style.left = '0px';
+                 }
+                // 获取当前点击按钮的下标
+                 var ymIndex = this.getAttribute('ymIndex');
+                 // 修改index为页码index
+                 index = ymIndex;
+                 // 开始滚动
+                 animationMove(ul,-index * screen.offsetWidth);
+                 // 排他思想修改样式
+                 for ( var j = 0 ; j < ol.children.length ; j ++ ) {
+                     if ( j == ymIndex ) {
+                         ol.children[j].className = 'current';
+                     }else{
+                         ol.children[j].className = '';
+                     }
+                 }
+             }
+         // }
+     }
+</script>
+</body>
+</html>

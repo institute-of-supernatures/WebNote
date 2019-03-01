@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 把别人的框架先下载下来 -->
+    <!-- 
+        使用步骤：
+                1.导入文件：  fullpage的css文件  jquery.js 以及 fullpage.js 
+                        注意：jquery必须导入在插件的前面
+
+                2.准备html代码
+                        可以不用记，直接复制
+                        但是自己要知道每一屏是一个div，它一定有一个类叫section
+                        如果需要默认打开显示某一屏，就在那个div上加一个类叫active
+
+                3.调用初始化代码
+                        找到大div，调用fullpage这个方法
+    -->
+
+    <link rel="stylesheet" href="css/jquery.fullpage.min.css">
+
+    <script src="lib/jquery-1.8.3.min.js"></script>
+
+    <script src="lib/jquery.fullpage.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="xxoo">
+
+        <div class="section section1">
+            <h3>第一屏</h3>
+        </div>
+        <div class="section">
+            <h3>第二屏</h3>
+        </div>
+        <div class="section">
+            <h3>第三屏</h3>
+        </div>
+        <div class="section">
+            <h3>第四屏</h3>
+        </div>
+        <div class="section">
+            <h3>第五屏</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    $('#xxoo').fullpage({
+
+        // 是否显示导航
+        navigation:true,
+        
+        // 设置每一屏背景颜色
+        sectionsColor:['#f00','#0f0','#00f'],
+        
+        // 当滚动到某一屏后就会触发的事件（回调函数）
+        afterLoad:function(a,index){
+
+            console.log(a);
+            // 参数2：是你滚出来的第几页的页数，从1开始
+            console.log(index);
+            
+        }
+    });
+
+</script>

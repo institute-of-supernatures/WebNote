@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="../common.js "></script>
+<script>
+    var box =id('box');
+    document.onmousemove = function ( e ) {
+        e = e || window.event;
+        box.style.left = getPagePoint(e).pageX - (box.offsetWidth/2)+'px';
+        box.style.top = getPagePoint(e).pageY - (box.offsetHeight/2)+'px';
+    }
+</script>
+</body>
+</html>

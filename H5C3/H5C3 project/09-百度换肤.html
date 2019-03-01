@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度换肤</title>
+    <style>
+        html,
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            background: url(images/1.jpg) no-repeat;
+        }
+
+        .back {
+            width: 100%;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.3);
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        .back img {
+            width: 200px;
+            height: 125px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="back">
+        <a href="images/1.jpg">
+            <img src="images/1.jpg" alt="">
+        </a>
+        <a href="images/2.jpg">
+            <img src="images/2.jpg" alt="">
+        </a>
+        <a href="images/3.jpg">
+            <img src="images/3.jpg" alt="">
+        </a>
+        <a href="images/4.jpg">
+            <img src="images/4.jpg" alt="">
+        </a>
+        <a href="images/5.jpg">
+            <img src="images/5.jpg" alt="">
+        </a>
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    //在这里页面一打开的时候就应该取出上一次你保存的换肤记录，再给body去显示
+    var url = localStorage.getItem('url');
+    if(url)
+        document.body.style.background = "url(" + url +")";
+
+    //找到所有a标签
+    var aList = document.getElementsByTagName('a');
+
+    //给每个a标签加点击事件
+    for (var i = 0; i < aList.length; i++) {
+
+        //每个a的点击事件
+        aList[i].onclick = function () {
+            
+            //把被点击的a标签的href值作为body的背景图片路径
+            document.body.style.background = "url(" + this.href + ")";
+            
+            //把当前换下的皮肤的路径保存起来，方便下次打开来使用
+            localStorage.setItem('url',this.href);
+
+            //阻止跳转
+            return false;
+        }
+    }
+</script>

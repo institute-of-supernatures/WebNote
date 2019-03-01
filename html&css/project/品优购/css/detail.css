@@ -1,0 +1,350 @@
+/* 详情页面 */
+.de_container {
+    padding-top: 22px;
+}
+.crumb_wrap {
+    height: 18px;
+}
+.crumb_wrap li {
+    float: left;
+    line-height: 18px;
+}
+.crumb_wrap li a {
+    color: #666666;
+}
+.crumb_wrap li:hover a {
+    color: #f10215;
+}
+.crumb_wrap li.icon-gengduo {
+    font-size: 12px;
+    margin-left: 18px;
+    margin-right: 22px;
+    color: #666666;
+}
+.product_infro {
+    height: 600px;
+}
+.product_infro .preview_wrap {
+    width: 400px;
+    height: 570px;
+    float: left;
+    margin-top: 8px;
+}
+.product_infro .itemInfo_wrap {
+    width: 718px;
+    height: 570px;
+    float: right;
+}
+.preview_wrap .preview_img {
+    border: 1px solid #666666;
+}
+.preview_list {
+    margin-top: 64px;
+    position: relative;
+}
+.preview_list ul {
+    width: 290px;
+    margin: 0 auto;
+}
+.preview_list li {
+    float: left;
+    border: 1px solid transparent;
+}
+.preview_list li:hover {
+    border: 1px solid #f10215;
+}
+.preview_list li:visited {
+    border: 1px solid #f10215;
+}
+.arrow_prev,
+.arrow_next {
+    position: absolute;
+    width: 22px;
+    height: 32px;
+    top: 13px;
+}
+.arrow_prev {
+    background: url("./../img/arrow-prev.png");
+    left: 10px;
+}
+.arrow_next {
+    background: url("./../img/arrow-next.png");
+    right: 10px;
+}
+.itemInfo_wrap .sku_name {
+    font-size: 16px;
+    line-height: 16px;
+    color: #333;
+    font-family: "幼圆";
+    font-weight: bold;
+}
+.itemInfo_wrap .news {
+    color: #ee2222;
+    margin: 18px 0 20px;
+}
+.itemInfo_wrap .summary {
+    width: 718px;
+    height: 510px;
+}
+.summary .sale {
+    height: 100px;
+    background-color: #fee9fe;
+    padding-left: 8px;
+    padding-top: 13px;
+    position: relative;
+}
+.summary .sale .dt {
+    float: left;
+    margin-right: 14px;
+    line-height: 20px;
+    color: #666666;
+}
+.sale .dt i {
+    margin-right: 24px;
+}
+.summary .sale .dd {
+    float: left;
+}
+.summary .sale .dd span {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #ee2222;
+    margin: 0 5px;
+}
+.sale .dd .ico {
+    color: #c81623;
+}
+.sale .dd a {
+    color: #c81623;
+}
+.summary .sale .dd {
+    line-height: 22px;
+    width: 560px;
+}
+.summary .sell {
+    margin-top: 10px;
+}
+.sell .dd .raise {
+    float: left;
+    width: 40px;
+    height: 22px;
+    background-color: #c81623;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+}
+.sell .dd .more {
+    color: #666666;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.sale .comment {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+.sale .comment .count {
+    color: #f10215;
+}
+.itemInfo_wrap .summary .choose_view {
+    width: 550px;
+    /* height: 236px; */
+    border-top: 1px solid #fff;
+    margin-top: 40px;
+    position: relative;
+}
+.choose_view .dt {
+    float: left;
+    margin-right: 12px;
+    margin-left: 8px;
+}
+.choose_view .choose_color {
+    margin-top: 15px;
+}
+.choose_view .choose_color .dt {
+    height: 43px;
+    line-height: 43px;
+}
+.choose_view .dd {
+    float: left;
+}
+.choose_view .choose_color .dd a {
+    float: left;
+    width: 80px;
+    height: 41px;
+    border: 1px solid #ededed;
+    background-color: #f7f7f7;
+    line-height: 41px;
+    text-align: center;
+    margin-right: 8px;
+}
+.choose_color .dd a:nth-child(3) {
+    border-color: #ee2222;
+}
+.choose_version {
+    margin-top: 7px;
+}
+.choose_version .dt {
+    height: 34px;
+    line-height: 34px;
+}
+.choose_version .dd a {
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border: 1px solid #ededed;
+    margin-right: 10px;
+    background-color: #f7f7f7;
+}
+.choose_version .dd a:nth-child(2) {
+    border-color: #ee2222;
+}
+.choose_view .underline {
+    width: 312px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #ededed;
+}
+.choose_version i {
+    margin-right: 24px;
+}
+.addShopCar .choose_count {
+    width: 49px;
+    height: 44px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.choose_count input {
+    position: absolute;
+    width: 33px;
+    height: 44px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+.addShopCar {
+    margin-left: 8px;
+    margin-top: 21px;
+}
+.addShopCar .choose_count {
+    float: left;
+}
+.addShopCar .choose_count a {
+    position: absolute;
+    right: 0;
+    height: 22px;
+    width: 15px;
+    line-height: 22px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+.addShopCar .choose_count a.add {
+    top: 0;
+}
+.addShopCar .choose_count a.reduce {
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+.addShopCar .btn {
+    float: left;
+    width: 142px;
+    height: 46px;
+    background-color: #f10215;
+    margin-left: 10px;
+}
+.addShopCar .btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+}
+.product_detali .aside {
+    float: left;
+    width: 208px;
+    border: 1px solid #ccc; 
+}
+.product_detali .detail {
+    width: 978px;
+    float: right;
+}
+.aside .tab_list li {
+    float: left;
+    width: 103px;
+    height: 33px;
+    border-bottom: 1px solid #ccc; 
+    text-align: center;
+    line-height: 33px;
+}
+.aside .tab_list li.check {
+    border-color: transparent;
+}
+.aside .tab_list li.chek a {
+    color: #c81623;
+}
+.aside .tab_list li:nth-child(2) {
+    border-left: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+.aside .tab_con li {
+    height: 237px;
+    width: 190px;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 auto;
+}
+.aside .tab_con .tab_detail {
+    width: 100%;
+    height: 189px;
+    display: block;
+}
+.aside .tab_con .con_name {
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+.aside .tab_con .addCar {
+    display: block;
+    width: 88px;
+    height: 26px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    text-align: center;
+    line-height: 26px;
+    margin: 0 auto;
+}
+.detail_list {
+    height: 39px;
+    width: 976px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+}
+.detail_list li {
+    float: left;
+    line-height: 39px;
+    height: 39px;
+    padding: 0 18px;
+}
+.detail_list li:first-child {
+    background-color: #c81623;
+}
+.detail_list li:first-child a {
+    color: #fff;
+}
+.detail_con {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.detail_con li {
+    padding-top: 20px;
+    padding-left: 22px;
+}
+.detail_more {
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+}

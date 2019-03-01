@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线条</title>
+</head>
+<body>
+    <canvas id="can" width="600" height="400
+"></canvas>
+    <script>
+        var ctx = document.getElementById('can').getContext('2d');
+        function draw () {
+            // 设置线条末端样式
+            var lineCap = ['butt','round','square'];
+            // for ( var i = 0 ; i < 10 ; i ++ ) {
+            //     ctx.lineWidth = 1+i;
+            //     ctx.beginPath();
+            //     ctx.moveTo(5+i*14,5);
+            //     ctx.lineTo(5+i*14,140);
+            //     ctx.stroke();
+            // }
+            for (var i=0;i<lineCap.length;i++){
+                ctx.lineWidth = 15;
+                ctx.lineCap = lineCap[i];
+                ctx.beginPath();
+                ctx.moveTo(25+i*50,10);
+                ctx.lineTo(25+i*50,140);
+                ctx.stroke();
+            }
+        }
+        // draw();
+        /*
+            getLineDash(): 返回一个包含当前虚线样式，长度为非负偶数的数组。
+            setLineDash(segments): 设置当前虚线样式。
+            lineDashOffset = value: 设置虚线样式的起始偏移量。
+        */
+        ctx.setLineDash([10,20,10]);// 第一段虚线长度 和第二段虚线间隔 第二段虚线长度
+        ctx.lineDashoffset = -20;
+        ctx.moveTo(300,150);
+        ctx.lineTo(500,150);
+        ctx.stroke();
+    </script>
+</body>
+</html>

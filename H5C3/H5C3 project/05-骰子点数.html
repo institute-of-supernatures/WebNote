@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        ul {
+            width: 260px;
+            height: 260px;
+            list-style: none;
+            padding: 0;
+
+            border: 1px solid #000;
+            background-color: lightgray;
+            border-radius: 20px;
+            display: flex;
+        }
+
+        li {
+            background-color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        ul:nth-child(1) {
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul:nth-child(2) {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        ul:nth-child(3) {
+            justify-content: space-around;
+        }
+
+
+        ul:nth-child(3) li:nth-child(1) {
+
+            margin-top: 10px;
+        }
+
+
+        ul:nth-child(3) li:nth-child(2) {
+
+            align-self: center;
+        }
+
+        ul:nth-child(3) li:nth-child(3) {
+
+            align-self: flex-end;
+            margin-bottom: 10px;
+        }
+
+        .last>div {
+            flex: 1;
+            /* border: 1px solid #000; */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+    </ul>
+
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+        </div>
+        <div>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+
+    <ul class="last">
+        <div>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+
+        <div>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </ul>
+</body>
+
+</html>

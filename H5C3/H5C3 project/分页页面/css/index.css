@@ -1,0 +1,455 @@
+.section1{
+
+    background: url(../images/01/products.png) no-repeat center,
+                url(../images/01/bg.png) no-repeat center bottom;
+}
+
+
+.section1 .sofa{
+
+    position: absolute;
+    /* 让沙发永远固定在中间 */
+    left:50%;
+    top:20%;
+    /* 让沙发稍微往左移动一点到我们需要到的大厦的位置 */
+    margin-left: -190px;
+    animation: shake 1.6s infinite;
+}
+
+.section1 .ball{
+
+    position: absolute;
+    right:30px;
+    top:90px;
+
+    animation: shake 2.1s infinite;
+}
+
+
+/* 写一个上下抖动的动画剧本 */
+@keyframes shake{
+
+    50%{
+        transform: translateY(-50px);
+    }
+    /* 如果后面没写，就代表用剩余的时间来复原 */
+}
+
+/*********** 第二屏开始 ***********/
+
+.section2{
+    background: url(../images/02/bg.png) no-repeat center bottom;
+}
+
+.section2 .search{
+
+    position: absolute;
+    right:20px;
+    bottom:50%;
+}
+
+.section2 .sofas{
+    position: absolute;
+
+    width:0;
+    height:0;
+
+    right:50%;
+    bottom:50%;
+
+    margin-right:-220px;
+    margin-bottom:-90px;
+}
+
+
+/*********** 第三屏开始 ***********/
+
+.section3{
+
+    background: url(../images/03/bg.png) no-repeat center;
+}
+
+
+.section3 .sofa{
+
+    position: absolute;
+    left:50%;
+    margin-left: -230px;
+    bottom: 50%;
+    margin-bottom: -40px;
+}
+
+.section3 .color{
+
+    width: 296px;
+    height: 131px;
+    background: url(../images/03/color01.gif);
+
+    position: absolute;
+    left:50%;
+    margin-left: 40px;
+}
+
+.section3 .add{
+
+    width: 218px;
+    height: 58px;
+    background: url(../images/03/add01.gif);
+
+    position: absolute;
+    left:50%;
+    margin-left: 40px;
+
+    bottom: 50%;
+    margin-bottom:-200px;
+}
+
+.section3.animation .color{
+
+    transition: all 1s;
+    background: url(../images/03/color02.gif);
+}
+
+
+
+.section3.animation .add{
+
+    transition: all 1s;
+    background: url(../images/03/add02.gif);
+}
+
+
+/*********** 第四屏开始 ***********/
+.section4{
+    background: url(../images/04/bg.png) no-repeat center bottom;
+}
+
+.section4 .cloud{
+
+    position: absolute;
+    top:20px;
+    right:20px;
+
+    animation:cloud 50s infinite;
+}
+
+@keyframes cloud{
+
+    /* 0-50%是移动 */
+    50%{
+
+        transform: translateX(-1500px);
+    }
+    /* 剩余部分代表动画效果复原 */
+}
+
+
+.section4>div{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.section4 .keyboard{
+
+    width: 283px;
+    height: 270px;
+    background: url(../images/04/keyboard.png);
+    position: relative;
+
+    margin-top: 25px;
+
+    opacity: 0;
+}
+
+.section4 .address{
+
+    position: absolute;
+    left:50px;
+    top:50px;
+}
+
+
+.section4 .carBox{
+    width: 407px;
+    height: 346px;
+    position: absolute;
+
+    bottom:0;
+    margin-bottom: 40px;
+}
+
+.section4 .sofa{
+    position: absolute;
+    left:150px;
+    top:-35px;
+}
+
+.section .car{
+
+    position: absolute;
+}
+
+
+/*********** 第五屏开始 ***********/
+.section5{
+    background: url('../images/05/bg.png');
+
+    perspective: 600px;
+}
+
+.section5 .cardBox{
+
+    width: 358px;
+    height: 221px;
+    position: absolute;
+
+    right:50%;
+    top:40%;
+    margin-right:50px;
+}
+
+.section5 .bill{
+
+    position: absolute;
+    left:100px;
+    top:0;
+}
+
+.section5 .card{
+    position: absolute;
+}
+
+
+.section5 .mouse{
+
+    width: 205px;
+    height: 400px;
+    background: url(../images/05/mouse01.png) left bottom;
+
+    position: absolute;
+    left:50%;
+    top:0;
+    margin-left: 200px;
+}
+
+.section5 .hand{
+
+    position: absolute;
+    bottom:0;
+    left:50%;
+    margin-left:170px;
+    margin-bottom: -100px;
+}
+
+.section5 .words{
+
+    position: absolute;
+    left:50%;
+    margin-left: -270px;
+    top:40px;
+    opacity: 0;
+}
+
+
+.section5.animation .hand{
+
+    transition: all 1s;
+    transform: translateY(-80px);
+}
+
+.section5.animation .mouse{
+
+    transition: all 1s 1s;
+    background: url(../images/05/mouse02.png) left bottom;
+}
+
+.section5.animation .bill{
+
+    transition: all 1s 2s;
+    top:-130px;
+}
+
+.section5.animation .words{
+
+    transition: all 1s 3s;
+    opacity: 1;
+    transform: rotateY(360deg) scale(1.2);
+}
+
+
+
+/*********** 第六屏开始 ***********/
+.section6{
+
+    background: url(../images/06/bg.png) repeat-x 20% bottom;
+}
+
+
+.section6 .cloud{
+    position: absolute;
+    right:0;
+    top:10px;
+
+    animation:cloud 50s infinite linear;
+}
+
+
+.section6 .carBox{
+    width: 221px;
+    height: 122px;
+
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 85px;
+    left:50%;
+    margin-left: -150px;
+
+    z-index:99;
+}
+
+
+.section6 .man{
+
+    position: absolute;
+    bottom: 10px;
+    right:0;
+    height:0;
+}
+
+.section6 .car{
+
+    position: absolute;
+}
+
+.section6 .door{
+
+    position: absolute;
+
+    bottom: 0;
+    margin-bottom: 116px;
+    left:50%;
+    margin-left: 220px;
+
+    display: none;
+}
+
+.section6 .girl{
+
+    position: absolute;
+
+    height:120px;
+    bottom: 0;
+    margin-bottom: 116px;
+    left:50%;
+    margin-left: 260px;
+
+    display: none;
+}
+
+
+.section6 .giftBox{
+    width: 123px;
+    height: 85px;
+    position: absolute;
+
+
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 485px;
+    left:50%;
+    margin-left: -150px;
+}
+
+.section6 .sofa{
+
+    position: absolute;
+    width: 80px;
+
+    top:-15px;
+    left:20px;
+}
+
+
+.section6 .box{
+    position: absolute;
+}
+
+
+
+/*********** 第七屏开始 ***********/
+
+.section7{
+
+    background: url(../images/07/bg.png) no-repeat center bottom;
+}
+
+.section7 .star{
+    /* width: 105px; */
+    width: 0;
+    height: 17px;
+    background: url(../images/07/stars3.png);
+
+    position: absolute;
+    left:50%;
+    bottom: 0;
+    margin-bottom: 444px;
+    margin-left: -296px;
+}
+
+.section7 .good{
+
+    position: absolute;
+    left:50%;
+    bottom: 0;
+    margin-bottom: 380px;
+    margin-left: -280px;
+
+    opacity: 0;
+}
+
+.section7.animation .star{
+
+    transition: all 1s steps(5);
+    width:105px;
+}
+
+.section7.animation .good{
+
+    transition: all 1s 1s;
+    opacity: 1;
+}
+
+/*********** 第八屏开始 ***********/
+.section8{
+
+    background: url(../images/08/bg.png);
+}
+
+.section8 .begin{
+
+    position: absolute;
+    left: 50%;
+    margin-left: -195px;
+    top:20px;
+}
+
+.section8 .again{
+
+    position: absolute;
+    bottom:80px;
+    right:80px;
+}
+
+.section8 .hand{
+
+    /* 不接受鼠标指针触发的事件 */
+    pointer-events: none;
+
+    position: absolute;
+    left:0;
+    bottom:0;
+}
