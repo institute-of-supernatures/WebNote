@@ -1,0 +1,4 @@
+name: Dome24
+description: A Study Demo
+dependencies:
+  date_format: ^1.0.8

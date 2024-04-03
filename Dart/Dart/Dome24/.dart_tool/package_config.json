@@ -1,0 +1,19 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "date_format",
+      "rootUri": "file:///Users/allen/.pub-cache/hosted/pub.flutter-io.cn/date_format-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "Dome24",
+      "rootUri": "../",
+      "packageUri": "lib/"
+    }
+  ],
+  "generated": "2020-08-29T13:40:48.037492Z",
+  "generator": "pub",
+  "generatorVersion": "2.9.2"
+}

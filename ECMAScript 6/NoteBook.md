@@ -1197,8 +1197,135 @@ const myObject = {
 
 ### 5.3 函数的name属性返回函数名
 
+```js
+const person = {
+  sayName() {
+    console.log("hello!");
+  }
+}
+console.log(person.sayName.name); // sayName
+```
 
+- 如果对象的方法使用了取值函数`getter`和存值函数`setter`, 则name属性不是在该方法上面,
+而是该方法属性的`描述对象`的get和set上面, 返回值是方法名前面加上get和set
+
+```js
+const obj = {
+  get foo(){},
+  set foo(x){}
+}
+console.log(obj.foo.name); //报错
+const des = Object.getOwnPropertyDescriptor(obj,'foo');
+console.log(des.get.name); // get foo
+console.log(des.set.name); // set foo
+```
+
+- bind方法创造的函数, name属性返回bound加上原函数的名字, Function构造函数创造的函数, name属性返回anonymous
+
+```js
+(new Funciton()).name // anonymous
+var doSome = function(){}
+doSome.bind().name // bound doSome
+```
+
+- 如果对象的方法是一个Symbol值, 那么name属性返回的是这个Symbol值的描述
+
+```js
+const key1 = Symbol('description');
+const key2 = Symbol();
+let obj = {
+  [key1](){},
+  [key2](){}
+}
+obj[key1].name // '[description]'
+obj[key2].name // ''
+```
 
 ### 5.4 属性的可枚举性和遍历
+
+- Object.getOwnPropertyNames() 遍历自身所有的属性`无论是否可以枚举`, 不包括原型链上的
+- 描述对象的enumerable属性, 称之为`可枚举性`, 如果该属性为false. 就表示某些操作会忽略当前属性
+
+```js
+let obj = {
+  foo:123
+}
+Object.getOwnPropertyDescriptor(obj,'foo')
+//  {
+  // value: 123,
+  // writable: true,
+  // enumerable: true,
+  // configurable: true
+// }
+```
+
+- 四个操作会忽略enumerable为false的属性, 只操作为true的属性
+  1. `for in`循环 遍历对象的每一个可枚举属性, 包括原型链上的可枚举属性
+  - 对象原型的`toString`方法, 以及数组的`length`属性, 就通过`可枚举性`, 从而避免被`for in`遍历到
+  - `toString`和`length`属性的enumerable都是false, 因此`for in`不会遍历到这两个继承自原型的属性
+
+```js
+Object.getOwnPropertyDescriptor(Object.prototype,'toString').enumerable // false
+```
+
+  2. `Object.keys(obj)` 对象的所有可枚举属性的字符串数组
+  3. `Object.assign()` 将所有可枚举属性的值从一个或多个源对象复制到目标对象, 它将返回目标对象
+
+```js
+/* Object.assign(target, ...sources) 
+  参数1: 目标对象
+  参数2: 源对象
+ */
+const obj1 = {
+  a:1 ,
+  b:2 ,
+  c:3
+}
+const obj2 = Object.assign({
+  c:4 ,
+  d:5
+}, obj1);
+console.log(obj2.c, obj2.d); // expected output: 3 5
+```
+
+> 注意: ES6规定, 所有Class的原型的方法都是不可枚举的
+
+```js
+Object.getOwnPropertyDescriptor(calss{
+  foo(){}
+}.prototype, 'foo').enumerable // false
+```
+
 ### 5.5 属性的遍历
+
+> for in
+  - for in 循环遍历对象自身和继承的可枚举属性`(不含Symbol属性)`
+
+> Object.keys(obj)
+  - Object.keys(obj) 返回一个数组, 包括对象自身(不含继承的)所有可能枚举的属性`(不含Symbol)`的键名
+
+> Object.getOnwPropertyNames(obj)
+  - Object.getOwnPropertyNames 返回一个数组, 包含对象自身所有的Symbol属性的键名
+
+> Object.getOwnPropertySymbols(obj)
+  - Object.getOwnPropertySymbols(obj) 返回一个数组, 包含对象自身的所有的Symbol属性的键名
+
+> Reflect.ownKeys(obj)
+  - Reflect.ownKeys(obj) 返回一个数组, 包含对象自身的所有键名, 不管键名是Symbol或字符串, 也不管是否可枚举
+
 ### 5.6 super 关键字
+
+> this 关键字总是指向函数所在的当前对象, ES6有新增了另一个类似的关键字super, 指向当前对象的原型对象
+
+## 6.0 对象的新增方法
+
+### 6.1 Object.is()
+### 6.2 Object.assign()
+### 6.3 Object.getOwnPropertyDescriptors()
+### 6.4 Object.setPrototypeOf()
+### 6.5 Object.getPrototypeOf()
+### 6.6 其他方法
+#### 6.6.1 Object.keys()
+#### 6.6.2 Object.values()
+#### 6.6.3 Object.entries()
+#### 6.6.4 Object.fromEntries()

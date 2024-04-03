@@ -16,7 +16,8 @@
 - 项目更新后 `<项目中重复执行>`
     - $ git add .
     - $ git commit -m '项目名称2.0'
-        - $ git log
+        - $ git log`<查看提交>`
+        - $ git log --oneline `<简略查看提交>`
 - 本地仓库同步远程服务器 `<项目完成后才执行>`
     - $ git remote add origin 远程地址  `<远程连接>`
         - $ git remote rm origin `<删除之前的远程仓库链接>`

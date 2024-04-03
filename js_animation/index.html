@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    button {
+      width: 80px;
+      height: 40px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-Color: pink;
+      transition: all 30ms ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">匀速动画</button>
+  <button id="btns">缓动动画</button>
+  <div class="box"></div>
+
+  <script src="./animation.js"></script>
+  <script type="text/javascript">
+    var btn = document.getElementById('btn');
+    var btns = document.getElementById('btns');
+    var box = document.querySelector('.box');
+
+    var num = 0;
+    var speed = 10;
+    var timer = null;
+    btn.onclick = function () {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (num === 500) {
+          clearInterval(timer);
+          return null;
+        }
+        num += speed;
+        box.style.transform = `translateX(${num}px)`;
+      }, 30);
+    }
+
+    var nums = 0;
+    var speeds = null;
+    var timers = null;
+    btns.onclick = function () {
+      timers = setInterval(() => {
+        if (nums === 500) {
+          clearInterval(timers);
+          return null;
+        }
+        speeds = (500 - nums) / 20;
+        speeds = speeds > 0 ? Math.ceil(speeds) : Math.floor(speeds);
+        nums += speeds;
+        box.style.transform = `translateX(${nums}px)`;
+      }, 30);
+    }
+  </script>
+</body>
+
+</html>

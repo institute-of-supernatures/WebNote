@@ -1,0 +1,39 @@
+<!--
+ * @Description: 测试html
+ * @Autor: Allen
+ * @Date: 2021-03-04 12:17:27
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="box"></div>
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script src="./common_class.js"></script>
+  <script type="text/javascript">
+    var o = new Common();
+    console.log(o.getEl_all(".box"));
+    // o.async_js("./async.js", true, 10000);
+    var c = new Cookie();
+    c.set_cookie("all", {all: 123}, 1);
+    console.log(c.get_cookie("all"));
+    c.del_cookie("all");
+    // c.clear_cookie();
+  </script>
+</body>
+
+</html>
