@@ -1,0 +1,9 @@
+{
+  "accentColor": "",
+  "theme": "system",
+  "translucency": true,
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "common"
+  ]
+}
